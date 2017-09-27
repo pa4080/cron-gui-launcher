@@ -22,17 +22,17 @@ get_frequent(){
 
 # Get certain envvar value ("$1") from any "/proc/$ProcessNumber/environ" file ("$2")
 get_environ(){
-	EnVar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); printf "$EnVar";
+	EnvVar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); printf "$EnvVar";
 }
 
 #
 export_environ(){
         printf "\n\nExported environment (source file /proc/$1/environ):\n\n" >> $LOG
-	for EnVar in $(cat -e "/proc/$1/environ" | sed 's/\^@/\n/g'); do echo "export $EnVar" >> $LOG; export "$EnVar"; done
+	for EnvVar in $(cat -e "/proc/$1/environ" | sed 's/\^@/\n/g'); do echo "export $EnvVar" >> $LOG; export "$EnvVar"; done
 }
 
 execute_input_commands(){
-	printf "$1" | awk 'BEGIN{FS=" && "; print "\n\nInput command list:"} {for(i=1;i<=NF;i++) system("echo \"Command: " $i "\" && nohup " $i "& ")}' >> $LOG
+	printf "$1" | awk 'BEGIN{ FS=" && "; print "\n\nInput command list:" } {for(i=1;i<=NF;i++) system("echo \"Command: " $i "\" && nohup " $i " >/dev/null 2>&1 &")}' >> $LOG
 }
 
 # Get the values of $XDG_CURRENT_DESKTOP from each "/proc/$ProcessNumber/environ" file - create an array.
@@ -43,7 +43,7 @@ declare -l DE && export DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "XDG_CURRENT_D
 
 # ---------------------------
 
-# Export the Desktop Environment:
+# Export the Desktop Environment Variables:
 if   [ "$DE" = "unity" ];               then export_environ "$(pgrep gnome-session -n -U $UID)"
 elif [ "$DE" = "gnome" ];               then export_environ "$(pgrep gnome-session -n)"
 elif [ "$DE" = "gnome-classic" ];       then export_environ "$(pgrep gnome-session -n)"
@@ -55,7 +55,11 @@ elif [ "$DE" = "xfce4" ];               then export_environ "$(pgrep xfce4-sessi
 else printf "Your current Desktop Environment is not supported!\n Please contribute to https://github.com/pa4080/cron-gui-launcher\n" >> $LOG
 fi
 
-execute_input_commands "$1"
+if [ -z "${1+x}" ]; then
+	pruntf "\n\nThere is not any input command!\n"
+else
+	execute_input_commands "$1"
+fi
 
 # Debug --------
 cat $LOG
