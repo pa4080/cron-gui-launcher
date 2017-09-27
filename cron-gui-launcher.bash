@@ -35,7 +35,7 @@ export_environ(){
 # Get the most frequent name of any desctop environment - within the created array # This is a way to find the current DE when it is changed a little bit ago
 for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT_DESKTOP" "$PN"; echo " "); done
 XDG_CURRENT_DESKTOP=$(echo -e ${XDG_CURRENT_DESKTOP[@]} | get_frequent) 
-declare -l DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "\nCurrent Desktop Environment\nXDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\nDE=$DE\n" >> $TEMP
+declare -l DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "XDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\nDE=$DE\n" >> $TEMP
 
 
 # Debug --------
