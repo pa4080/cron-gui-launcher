@@ -25,9 +25,16 @@ get_environ(){ envvar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); pr
 
 #
 export_environ(){
-        printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n"
+        printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n" >> $LOG
         IFS_BAK="$IFS"; IFS='^@'; 
-        for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" | sed '/^\s*$/d' >> $LOG; export $envvar; done
+        #for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" | sed '/^\s*$/d' >> $LOG; export $envvar; done
+        for env in $(cat -e "/proc/$1/environ"); do export $(printf "${env}\n" | sed '/^\s*$/d'); done
+        #for envvar in $(cat -e "/proc/$(pgrep gnome-session -n -U $UID)/environ"); do export $envvar >> $LOG; done
+        #ENVIRON=$(cat -e "/proc/$1/environ" | sed '/^\s*$/d')
+        #for envvar in ; do printf "$envvar\n" | sed '/^\s*$/d' >> $LOG; export $envvar; done
+        
+        #echo $ENVIRON
+        for i in ${ENVIRON[@]}; do echo -e "$i\n"; done
         IFS="$IFS_BAK"
 }
 
@@ -40,14 +47,14 @@ declare -l DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "XDG_CURRENT_DESKTOP=$XDG_C
 # ---------------------------
 
 # Export the Desktop Environment:
-if   [ "$DE" = "unity" ];               then export_environ "$(pgrep gnome-session -n)"
-elif [ "$DE" = "gnome" ];               then export_environ "$(pgrep gnome-session -n)"
-elif [ "$DE" = "gnome-classic" ];       then export_environ "$(pgrep gnome-session -n)"
-elif [ "$DE" = "kde" ];                 then export_environ "$(pgrep startkde -n)"
-elif [ "$DE" = "mate" ];                then export_environ "$(pgrep mate-session  -n)"
-elif [ "$DE" = "lxde" ];                then export_environ "$(pgrep lxsession -n)"
-elif [ "$DE" = "xfce" ];                then export_environ "$(pgrep xfce4-session -n)"
-elif [ "$DE" = "xfce4" ];               then export_environ "$(pgrep xfce4-session -n)"
+if   [ "$DE" = "unity" ];               then export_environ "$(pgrep gnome-session -n -U $UID)"
+#elif [ "$DE" = "gnome" ];               then export_environ "$(pgrep gnome-session -n)"
+#elif [ "$DE" = "gnome-classic" ];       then export_environ "$(pgrep gnome-session -n)"
+#elif [ "$DE" = "kde" ];                 then export_environ "$(pgrep startkde -n)"
+#elif [ "$DE" = "mate" ];                then export_environ "$(pgrep mate-session  -n)"
+#elif [ "$DE" = "lxde" ];                then export_environ "$(pgrep lxsession -n)"
+#elif [ "$DE" = "xfce" ];                then export_environ "$(pgrep xfce4-session -n)"
+#elif [ "$DE" = "xfce4" ];               then export_environ "$(pgrep xfce4-session -n)"
 else printf "Your current Desktop Environment is not supported!\n Please contribute to https://github.com/pa4080/cron-gui-launcher\n" >> $LOG
 fi
 
