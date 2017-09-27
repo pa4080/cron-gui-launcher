@@ -37,7 +37,7 @@ for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT
 XDG_CURRENT_DESKTOP=$(echo -e ${XDG_CURRENT_DESKTOP[@]} | get_frequent) && printf "XDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\n" >> $TEMP
 declare -l DE="${XDG_CURRENT_DESKTOP/:*/}"; printf "DE=$DE\n" >> $TEMP
 
-
+printf "\Supported Desktop Environments: 
 
 # Debug --------
 cat $TEMP
