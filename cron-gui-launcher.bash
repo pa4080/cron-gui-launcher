@@ -2,15 +2,15 @@
 
 # Create log file. Use "$2" to leave a description within the name.
 if [ -z "${2+x}" ]; then DESCRIPTION=""; else DESCRIPTION="-$2"; fi
-TEMP="/tmp/$USER-git-cron-launcher$DESCRIPTION.log"
-printf "\n$(date +%Y-%m-%d_%H:%M:%S)\n\nDetected environment variables:\n" > $TEMP
+LOG="/tmp/$USER-cron-gui-launcher$DESCRIPTION.log"
+printf "\n$(date +%Y-%m-%d_%H:%M:%S)\n\nDetected environment variables:\n" > $LOG
 
 # Get the value of the $DISPLAY variable for the current user. Unset it just in case this is a `ssh -X` connection
 unset DISPLAY
 while [ -z $DISPLAY ]; do
         DISPLAY=$(w $USER | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}' 2>/dev/null)
         if [ "$DISPLAY" == "" ]; then sleep 30; else export DISPLAY=$DISPLAY; fi
-done; printf "DISPLAY=$DISPLAY\n" >> $TEMP
+done; printf "DISPLAY=$DISPLAY\n" >> $LOG
 
 # --------------------
 
@@ -27,7 +27,7 @@ get_environ(){ envvar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); pr
 export_environ(){
         printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n"
         IFS_BAK="$IFS"; IFS='^@'; 
-        for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" >> $TEMP; export "$envvar" done
+        for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" >> $LOG; export "$envvar" done
         IFS="$IFS_BAK"
  }
 
@@ -35,37 +35,32 @@ export_environ(){
 # Get the most frequent name of any desctop environment - within the created array # This is a way to find the current DE when it is changed a little bit ago
 for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT_DESKTOP" "$PN"; echo " "); done
 XDG_CURRENT_DESKTOP=$(echo -e ${XDG_CURRENT_DESKTOP[@]} | get_frequent) 
-declare -l DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "XDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\nDE=$DE\n" >> $TEMP
+declare -l DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "XDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\nDE=$DE\n" >> $LOG
 
 # ---------------------------
 
 # Export the Desktop Environment:
 if   [ "$DE" = "gnome" ] || [ "$DE" = "unity" ] || [ "$DE" = "gnome-classic" ]; then export_environ "$(pgrep gnome-session -n)"
-elif [ "$DE" = "kde" ]; then
-
-        export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep startkde -n)/environ | cut -d= -f2-)
-
-elif [ "$DE" = "mate" ]
+elif [ "$DE" = "kde" ]; then export_environ "$(pgrep startkde -n)"
+elif [ "$DE" = "mate" ]; then 
 then
 
         export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep mate-session -n)/environ | cut -d= -f2-)
 
       
-elif [ "$DE" = "lxde" ]
-then
+elif [ "$DE" = "lxde" ]; then
        
         export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep lxsession -n)/environ | cut -d= -f2-)
        
-elif [ "$DE" = "xfce4" ]
-then
+elif [ "$DE" = "xfce4" ]; then
       
         export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep xfce4-session -n)/environ|cut -d= -f2-)
 
       
 else
-        echo "Wrong argument. It must be:"
+        printf "Your current Desktop Environment is not supported!\n Please contribute to https://github.com/pa4080/cron-gui-launcher\n" >> $LOG
 
 fi
 
 # Debug --------
-cat $TEMP
+cat $LOG
