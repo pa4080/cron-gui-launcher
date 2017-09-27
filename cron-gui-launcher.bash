@@ -25,7 +25,7 @@ get_environ(){ envvar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); pr
 
 #
 export_environ(){
-		printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n"
+	printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n"
         IFS_BAK="$IFS"; IFS='^@'; 
         for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" >> $TEMP; done
         IFS="$IFS_BAK"
@@ -34,10 +34,9 @@ export_environ(){
 # Get the values of $XDG_CURRENT_DESKTOP from each "/proc/$ProcessNumber/environ" file - create an array.
 # Get the most frequent name of any desctop environment - within the created array # This is a way to find the current DE when it is changed a little bit ago
 for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT_DESKTOP" "$PN"; echo " "); done
-XDG_CURRENT_DESKTOP=$(echo -e ${XDG_CURRENT_DESKTOP[@]} | get_frequent) && printf "XDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\n" >> $TEMP
-declare -l DE="${XDG_CURRENT_DESKTOP/:*/}"; printf "DE=$DE\n" >> $TEMP
+XDG_CURRENT_DESKTOP=$(echo -e ${XDG_CURRENT_DESKTOP[@]} | get_frequent) 
+declare -l DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "\nCurrent Desktop Environment\nXDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\nDE=$DE\n" >> $TEMP
 
-printf "\Supported Desktop Environments: 
 
 # Debug --------
 cat $TEMP
