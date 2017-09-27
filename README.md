@@ -24,5 +24,5 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 	kde					[ KDE Plasma ]
 	xfce == xfce4				[ Xubuntu | XFCE | XFCE4 ]
 	x-cinnamon				[ Cinnamon | Cinnamon2d ]
-	mate 					[ MATE ]
+	mate 					[ MATE | Open Box ]
 	````
