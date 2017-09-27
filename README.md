@@ -8,7 +8,9 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 
 1. Initiallyt the scrypt attempt to get the current user's `$DISPLAY` number. For this purposse it uses the <a href="https://askubuntu.com/a/744751/566421">following</a> method: 
 
-   <pre>w $(id -un) | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}'</pre>
+   ````bash
+   w $(id -un) | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}'
+   ````
    
    - The `$DISPLAY` variable is `unset` `while` the user is not logged in. In this case the scipt `sleep`'s for a while and then makes a new attept.
    - This action is repeated until the `$DISPLAY` variable is set and its value is getted and exportedexported.
