@@ -25,8 +25,9 @@ get_environ(){ envvar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); pr
 
 #
 export_environ(){
+		printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n"
         IFS_BAK="$IFS"; IFS='^@'; 
-        for envvar in $(cat -e "/proc/$1/environ"); do printf $i; done
+        for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" >> $TEMP; done
         IFS="$IFS_BAK"
  }
 
