@@ -3,7 +3,7 @@
 # Create log file. Use "$2" to leave a description within the name.
 if [ -z "${2+x}" ]; then DESCRIPTION=""; else DESCRIPTION="-$2"; fi
 TEMP="/tmp/$USER-git-cron-launcher$DESCRIPTION.log"
-printf "\n$(date +%Y-%m-%d_%H:%M:%S)\n\nDetected environment variables:\n\n" > $TEMP
+printf "\n$(date +%Y-%m-%d_%H:%M:%S)\n\nDetected environment variables:\n" > $TEMP
 
 # Get the value of the $DISPLAY variable for the current user. Unset it just in case this is a `ssh -X` connection
 unset DISPLAY
