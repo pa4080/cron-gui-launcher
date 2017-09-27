@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#test
+
 # Create log file. Use "$2" to leave a description within the name.
 if [ -z "${2+x}" ]; then DESCRIPTION=""; else DESCRIPTION="-$2"; fi
 TEMP="/tmp/$USER-git-cron-launcher$DESCRIPTION.log"
