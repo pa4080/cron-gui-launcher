@@ -20,14 +20,14 @@ get_frequent(){
         awk '{ n=++hsh[$1]; if(n>max_occ){ max_occ=n; what=$1 } else if(n==max_occ){ if(what>$1) what=$1 } } END{ print what }'
 }
 
-# Get certain envvar value - "$1" - from any "/proc/$ProcessNumber/environ" file - "2"
+# Get certain envvar value ("$1") from any "/proc/$ProcessNumber/environ" file ("$2")
 get_environ(){ envvar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); printf "$envvar"; }
 
 #
 export_environ(){
-	printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n"
+        printf "\nExported environment:\n\nSource file: /proc/$1/environ\n\n"
         IFS_BAK="$IFS"; IFS='^@'; 
-        for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" >> $TEMP; done
+        for envvar in $(cat -e "/proc/$1/environ"); do printf "$envvar\n" >> $TEMP; export "$envvar" done
         IFS="$IFS_BAK"
  }
 
@@ -37,6 +37,35 @@ for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT
 XDG_CURRENT_DESKTOP=$(echo -e ${XDG_CURRENT_DESKTOP[@]} | get_frequent) 
 declare -l DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "XDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\nDE=$DE\n" >> $TEMP
 
+# ---------------------------
+
+# Export the Desktop Environment:
+if   [ "$DE" = "gnome" ] || [ "$DE" = "unity" ] || [ "$DE" = "gnome-classic" ]; then export_environ "$(pgrep gnome-session -n)"
+elif [ "$DE" = "kde" ]; then
+
+        export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep startkde -n)/environ | cut -d= -f2-)
+
+elif [ "$DE" = "mate" ]
+then
+
+        export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep mate-session -n)/environ | cut -d= -f2-)
+
+      
+elif [ "$DE" = "lxde" ]
+then
+       
+        export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep lxsession -n)/environ | cut -d= -f2-)
+       
+elif [ "$DE" = "xfce4" ]
+then
+      
+        export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep xfce4-session -n)/environ|cut -d= -f2-)
+
+      
+else
+        echo "Wrong argument. It must be:"
+
+fi
 
 # Debug --------
 cat $TEMP
