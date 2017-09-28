@@ -18,11 +18,11 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 
 ## Supported/Tested Desktop Environments
 
-	````
+	
 	unity == gnome == gnome-classic 	[ Ubuntu Unity | Gnome | Gnome Classic | Open Box ]
 	lxde					[ LXDE | Lubuntu | Lubuntu Netbook ]
 	kde					[ KDE Plasma ]
 	xfce == xfce4				[ Xubuntu | XFCE | XFCE4 ]
 	x-cinnamon				[ Cinnamon | Cinnamon2d ]
 	mate 					[ MATE | Open Box ]
-	````
+	
