@@ -27,4 +27,4 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 	mate 				[MATE] [Open Box]
 	
 
-[![](https://img.youtube.com/vi/xShzFOrZKO8/1.jpg)](https://www.youtube.com/watch?v=xShzFOrZKO8)
+
