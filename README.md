@@ -19,10 +19,14 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 ## Supported/Tested Desktop Environments
 
 	
-	unity == gnome == gnome-classic 	[ Ubuntu Unity | Gnome | Gnome Classic | Open Box ]
-	lxde					[ LXDE | Lubuntu | Lubuntu Netbook ]
-	kde					[ KDE Plasma ]
-	xfce == xfce4				[ Xubuntu | XFCE | XFCE4 ]
-	x-cinnamon				[ Cinnamon | Cinnamon2d ]
-	mate 					[ MATE | Open Box ]
+	unity | gnome | gnome-classic 	[Ubuntu Unity] [Ubuntu Gnome] [Gnome Classic] [Open Box]
+	lxde				[Lubuntu] [Lubuntu Netbook] [LXDE]
+	kde				[Kubuntu] [KDE Plasma]
+	xfce | xfce4			[Xubuntu] [XFCE] [XFCE4]
+	x-cinnamon			[Cinnamon] [Cinnamon2d]
+	mate 				[MATE] [Open Box]
 	
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xShzFOrZKO8?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=xShzFOrZKO8#/0;136)
