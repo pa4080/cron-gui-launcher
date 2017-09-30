@@ -4,16 +4,16 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 
 ## How it works?
 
-0. Note about the logging: The sctipt will create a log file, located in `/tmp`, which name shall be `$USER-git-cron-launcher-$DESCRIPTION.log`. Where as `$DESCRIPTION` will be asignet the value of the input variable `$2`, thus if you wish you can make some job's log file unique.
+0. Note about the logging: The script will create a log file located in `/tmp`, which name shall be `$USER-git-cron-launcher-$DESCRIPTION.log`. Where as `$DESCRIPTION` will be assigned the value of the input variable `$2`, thus if you wish you can make some job's log file unique.
 
-1. Initiallyt the scrypt attempt to get the current user's `$DISPLAY` number. For this purposse it uses the <a href="https://askubuntu.com/a/744751/566421">following</a> method: 
+1. Initially the script attempts to get the current user's `$DISPLAY` number. For this purpose it uses the <a href="https://askubuntu.com/a/744751/566421">following</a> method: 
 
 	````bash
 	w $(id -un) | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}'
 	````
    
    - The `$DISPLAY` variable is `unset` `while` the user is not logged in. In this case the scipt `sleep`'s for a while and then makes a new attept.
-   - This action is repeated until the `$DISPLAY` variable is set and its value is getted and exportedexported.
+   - This action is repeated until the `$DISPLAY` variable is set, then its value is saved and exported.
 
 
 ## Supported/Tested Desktop Environments
