@@ -56,7 +56,7 @@ else printf "Your current Desktop Environment is not supported!\n Please contrib
 fi
 
 if [ -z "${1+x}" ]; then
-	pruntf "\n\nThere is not any input command!\n"
+	printf "\n\nThere is not any input command!\n"
 else
 	execute_input_commands "$1"
 fi
