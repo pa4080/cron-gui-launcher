@@ -10,7 +10,7 @@ unset DISPLAY; timeout=0
 while [ -z "$DISPLAY" ]; do
         DISPLAY=$(w "$USER" | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}' 2>/dev/null)
         if [ "$DISPLAY" == "" ]; then sleep 60; else export DISPLAY=$DISPLAY; fi
-        ((timeout++)); if [ "$timeout" -eq "$3" ]; then printf "Timeout: $timeout\n" >> $LOG; exit 1; fi
+        ((timeout++)); if [ "$timeout" -eq "$3" ]; then printf "Timeout: %s\n" "$timeout" >> "$LOG"; exit 1; fi
 done; printf 'DISPLAY=%s\n' "$DISPLAY" >> "$LOG"
 
 # --------------------
