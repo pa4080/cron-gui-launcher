@@ -22,7 +22,7 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
    
    - This action is repeated until the `$DISPLAY` variable is set, then its value is saved and exported. 
 
-
+2. Create an array of the values of the environment variable $XDG_CURRENT_DESKTOP from each "/proc/$ProcessNumber/environ" file. The command `pgrep -U "$UID"` creates a list of all $USER's processes. The function get_environ() is executed for each process and 
 
 ## Supported/Tested Desktop Environments
 
