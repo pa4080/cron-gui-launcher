@@ -19,7 +19,8 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 	````
    
    - The `$DISPLAY` variable is `unset` `while` the user is not logged in. In this case the scipt `sleep`'s for a while and then makes a new attept.
-   -This action is repeated until the `$DISPLAY` variable is set, then its value is saved and exported. 
+   
+   - This action is repeated until the `$DISPLAY` variable is set, then its value is saved and exported. 
 
 
 
