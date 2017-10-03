@@ -3,15 +3,15 @@
 # Create log file. Use "$2" to leave a description within the name.
 if [ -z "${2+x}" ]; then DESCRIPTION=""; else DESCRIPTION="-$2"; fi
 LOG="/tmp/$USER-cron-gui-launcher$DESCRIPTION.log"
-printf "\n$(date +%Y-%m-%d_%H:%M:%S)\n\n\nDetected environment variables:\n\n" > $LOG
+printf '\n%s\n\n\nDetected environment variables:\n\n' "$(date +%Y-%m-%d_%H:%M:%S)" > "$LOG"
 
 # Get the value of the $DISPLAY variable for the current user. Unset it just in case this is a `ssh -X` connection
 unset DISPLAY; timeout=0
-while [ -z $DISPLAY ]; do
-        DISPLAY=$(w $USER | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}' 2>/dev/null)
+while [ -z "$DISPLAY" ]; do
+        DISPLAY=$(w "$USER" | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}' 2>/dev/null)
         if [ "$DISPLAY" == "" ]; then sleep 60; else export DISPLAY=$DISPLAY; fi
-	((timeout++)); if [ "$timeout" -eq "$3" ]; then printf "Timeout: $timeout\n" >> $LOG; exit 1; fi
-done; printf "DISPLAY=$DISPLAY\n" >> $LOG
+        ((timeout++)); if [ "$timeout" -eq "$3" ]; then printf "Timeout: $timeout\n" >> $LOG; exit 1; fi
+done; printf 'DISPLAY=%s\n' "$DISPLAY" >> "$LOG"
 
 # --------------------
 
@@ -23,24 +23,24 @@ get_frequent(){
 
 # Get certain envvar value ("$1") from any "/proc/$ProcessNumber/environ" file ("$2")
 get_environ(){
-	EnvVar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); printf "$EnvVar";
+	EnvVar=$(sed -zne "s/^$1=//p" "/proc/$2/environ" 2>/dev/null); printf "%s" "$EnvVar";
 }
-
 #
 export_environ(){
-        printf "\n\nExported environment (source file /proc/$1/environ):\n\n" >> $LOG
-	for EnvVar in $(cat -e "/proc/$1/environ" | sed 's/\^@/\n/g'); do echo "export $EnvVar" >> $LOG; export "$EnvVar"; done
+        printf '\n\nExported environment (source file /proc/%s/environ):\n\n' "$1" >> "$LOG"
+        EnvVarList=$(cat -e "/proc/$1/environ" | sed 's/\^@/\n/g')
+	for EnvVar in $EnvVarList; do echo "export $EnvVar" >> "$LOG"; export "$EnvVar"; done
 }
 
 execute_input_commands(){
-	printf "$1" | awk 'BEGIN{ FS=" && "; print "\nInput command list:" } {for(i=1;i<=NF;i++) system("echo \"Command: " $i "\"") system("nohup " $i " >/dev/null 2>&1 &")}' >> $LOG
+        printf "%s" "$1" | awk 'BEGIN{ FS=" && "; print "\nInput command list:" } {for(i=1;i<=NF;i++) system("echo \"Command: " $i "\"") system("nohup " $i " >/dev/null 2>&1 &")}' >> "$LOG"
 }
 
 # Get the values of $XDG_CURRENT_DESKTOP from each "/proc/$ProcessNumber/environ" file - create an array.
 # Get the most frequent name of any desctop environment - within the created array # This is a way to find the current DE when it is changed a little bit ago
 for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT_DESKTOP" "$PN"; echo " "); done
-XDG_CURRENT_DESKTOP=$(echo -e ${XDG_CURRENT_DESKTOP[@]} | get_frequent)
-declare -l DE && export DE="${XDG_CURRENT_DESKTOP/:*/}" && printf "XDG_CURRENT_DESKTOP=$XDG_CURRENT_DESKTOP\nDE=$DE\n" >> $LOG
+XDG_CURRENT_DESKTOP=$(echo -e "${XDG_CURRENT_DESKTOP[@]}" | get_frequent)
+declare -l DE && export DE="${XDG_CURRENT_DESKTOP/:*/}" && printf 'XDG_CURRENT_DESKTOP=%s\nDE=%s\n' "$XDG_CURRENT_DESKTOP" "$DE" >> "$LOG"
 
 # ---------------------------
 
@@ -53,15 +53,14 @@ elif [ "$DE" = "mate" ];                then export_environ "$(pgrep mate-sessio
 elif [ "$DE" = "lxde" ];                then export_environ "$(pgrep lxsession -n)"
 elif [ "$DE" = "xfce" ];                then export_environ "$(pgrep xfce4-session -n)"
 elif [ "$DE" = "xfce4" ];               then export_environ "$(pgrep xfce4-session -n)"
-else printf "Your current Desktop Environment is not supported!\n Please contribute to https://github.com/pa4080/cron-gui-launcher\n" >> $LOG
+else printf 'Your current Desktop Environment is not supported!\n Please contribute to https://github.com/pa4080/cron-gui-launcher\n' >> "$LOG"
 fi
 
 if [ -z "${1+x}" ]; then
-	pruntf "\n\nThere is not any input command!\n"
+	printf '\n\nThere is not any input command!\n'
 else
 	execute_input_commands "$1"
 fi
 
 # Debug --------
-cat $LOG
-
+cat "$LOG"
