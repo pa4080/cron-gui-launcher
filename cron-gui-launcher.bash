@@ -6,10 +6,11 @@ LOG="/tmp/$USER-cron-gui-launcher$DESCRIPTION.log"
 printf '\n%s\n\n\nDetected environment variables:\n\n' "$(date +%Y-%m-%d_%H:%M:%S)" > "$LOG"
 
 # Get the value of the $DISPLAY variable for the current user. Unset it just in case this is a `ssh -X` connection
-unset DISPLAY
+unset DISPLAY; timeout=0
 while [ -z "$DISPLAY" ]; do
         DISPLAY=$(w "$USER" | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}' 2>/dev/null)
-        if [ "$DISPLAY" == "" ]; then sleep 30; else export DISPLAY=$DISPLAY; fi
+        if [ "$DISPLAY" == "" ]; then sleep 60; else export DISPLAY=$DISPLAY; fi
+        ((timeout++)); if [ "$timeout" -eq "$3" ]; then printf "Timeout: $timeout\n" >> $LOG; exit 1; fi
 done; printf 'DISPLAY=%s\n' "$DISPLAY" >> "$LOG"
 
 # --------------------
@@ -32,7 +33,7 @@ export_environ(){
 }
 
 execute_input_commands(){
-	printf "%s" "$1" | awk 'BEGIN{ FS=" && "; print "\n\nInput command list:" } {for(i=1;i<=NF;i++) system("echo \"Command: " $i "\" && nohup " $i " >/dev/null 2>&1 &")}' >> "$LOG"
+        printf "%s" "$1" | awk 'BEGIN{ FS=" && "; print "\nInput command list:" } {for(i=1;i<=NF;i++) system("echo \"Command: " $i "\"") system("nohup " $i " >/dev/null 2>&1 &")}' >> "$LOG"
 }
 
 # Get the values of $XDG_CURRENT_DESKTOP from each "/proc/$ProcessNumber/environ" file - create an array.
