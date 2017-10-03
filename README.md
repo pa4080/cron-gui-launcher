@@ -22,7 +22,7 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
    
    - This action is repeated until the `$DISPLAY` variable is set, then its value is saved and exported. 
 
-2. Create an array of the values of the envvar `$XDG_CURRENT_DESKTOP` from each `/proc/$ProcessNumber/environ` file. The command `pgrep -U "$UID"` creates a list of all `$USER`'s processes. The function `get_environ()` is executed for each process `$USER`'s process and its output is stored into the temporal array `XDG_CURRENT_DESKTOP+=$()`.
+2. Create an array of the values of the envvar `$XDG_CURRENT_DESKTOP` from each <a href="http://manpages.ubuntu.com/manpages/trusty/man5/proc.5.html">`/proc/$ProcessNumber/environ`</a> file. The command `pgrep -U "$UID"` creates a list of all `$USER`'s processes. The function `get_environ()` is executed for each `$USER`'s process and its output is stored into the temporal array `XDG_CURRENT_DESKTOP+=$()`.
 
 3. Get the name of the current Desktop Environment. Get the most frequent value from the array created in step 2. This is the way, used here, to find the current DE when it is changed a little bit ago. The function `get_frequent()` is used here and its output is stored as value of the variable `$XDG_CURRENT_DESKTOP`.
 
