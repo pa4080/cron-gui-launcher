@@ -7,7 +7,7 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 - `$1` - list of commands to be executed.
 - `$2` - short description of the job that will be appended to the log file name.
 
-  Note about the logging: The sctipt will create a log file, located in `/tmp`, which name shall be `$USER-cron-gui-launcher-$DESCRIPTION.log`. Where as `$DESCRIPTION` will be asignet the value of the input variable `$2`, thus if you wish you can make some job's log file unique. Otherwise the name of the log file will be: `$USER-cron-gui-launcher.log`.
+  Note about the logging: The script will create a log file located in `/tmp`, which name shall be `$USER-git-cron-launcher-$DESCRIPTION.log`. Where as `$DESCRIPTION` will be assigned the value of the input variable `$2`, thus if you wish you can make some job's log file unique.
 
 - `$3` - timeout in minutes, when the user is not logged in.
 
