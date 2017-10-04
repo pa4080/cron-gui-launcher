@@ -39,8 +39,7 @@ execute_input_commands(){
 # [2.] Get the value of $XDG_CURRENT_DESKTOP from each "/proc/$ProcessNumber/environ" file - create an array.
 for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT_DESKTOP" "$PN"; echo " "); done
 
-# [3.] Get the most frequent name of any desctop environment - within the created array 
-# This is the way, used here, to find the current DE when it is changed a little bit ago
+# [3.] Get the name of the current Desktop Environment
 XDG_CURRENT_DESKTOP=$(echo -e "${XDG_CURRENT_DESKTOP[@]}" | get_frequent)
 
 # [4.] Set the triger $DE - declare it in lowercase, then cut `:something` and export 
