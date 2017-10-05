@@ -28,9 +28,9 @@ A simple Bash script, that is able to launch any GUI application as Cron job wit
 
 4. Filter the value of the variable `$XDG_CURRENT_DESKTOP` and set the result as value of the triger `$DE`.
 
-5.
+5. Export the current user's desktop-session environment variables. The commands as `pgrep gnome-session -n -U $UID` gets the current user's desktop-session process number, then the function `export_environ()` reads the content of `/proc/$ProcessNumber/environ` and export its content line by line.
 
-6.
+6. Execute the list of the input commands. Fragmentation of the list of the input commands (input variable "$1"), use ` && ` as separator, then execute each one by the function `execute_input_commands()`.
 
 ## Supported/Tested Desktop Environments
 
