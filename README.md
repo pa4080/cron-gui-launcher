@@ -1,6 +1,6 @@
-# cron-gui-launcher
+# Cron-GIU-Launcher
 
-A simple Bash script, that is able to launch a **GUI** application as **Cron** job within **Ubuntu**. The script is designed to work with the user's environment, respectively the Cron jobs shall be set within user's `crontab` file. It codld be modified to work with `cron.d`, but in some cases this will cause mishmash with the file permissions within `/proc`, so it is not good idea. 
+**Cron-GIU-Launcher** is a simple Bash script, that is able to launch a **GUI** application as **Cron** job within **Ubuntu**. The script is designed to work with the user's environment, respectively the Cron jobs shall be set within user's `crontab` file. It codld be modified to work with `cron.d`, but in some cases this will cause mishmash with the file permissions within `/proc`, so it is not good idea. 
 
 ## Input Parameters
 
@@ -8,7 +8,13 @@ A simple Bash script, that is able to launch a **GUI** application as **Cron** j
 - `$2` - short description of the job that will be appended to the log file name. Read the the section *How it works?*
 - `$3` - time-out in minutes, when the user is not logged in. While this variable is empty there is no time-out. If the job is on `@reboot` this variable should be empty. This option is usefull for regular Cron jobs, for example: If you have a job that is executed every 15 minutes and your user is logout (or locked) for 2 hours there will have 8 pending jobs, which will be execited when the user is logged on.
 
-## How it works?
+## How to use Cron-GIU-Launcher
+
+Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
+
+## How to install
+
+## How it works
 
 0. Note about the logging: The script will create a log file located in `/tmp`, which name shall be 
 	````bash
@@ -47,5 +53,5 @@ A simple Bash script, that is able to launch a **GUI** application as **Cron** j
 	x-cinnamon			[Cinnamon] [Cinnamon2d]
 	mate 				[MATE] [Open Box]
 	
-
+## Origins
 
