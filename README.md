@@ -4,9 +4,9 @@ A simple Bash script, that is able to launch a **GUI** application as **Cron** j
 
 ## Input Parameters
 
-- `$1` - list of commands to be executed.
-- `$2` - short description of the job that will be appended to the log file name.
-- `$3` - timeout in minutes, when the user is not logged in.
+- `$1` - list of commands to be executed. The individual commands need to be separated with `␣&&␣` - note the spaces.
+- `$2` - short description of the job that will be appended to the log file name. Read the the section *How it works?*
+- `$3` - time-out in minutes, when the user is not logged in. While this variable is empty there is no time-out. If the job is on `@reboot` this variable should be empty. This option is usefull for regular Cron jobs, for example: If you have a job that is executed every 15 minutes and your user is logout (or locked) for 2 hours there will have 8 pending jobs, which will be execited when the user is logged on.
 
 ## How it works?
 
