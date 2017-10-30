@@ -59,7 +59,22 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 ### Mate
 
-	sudo apt-add-repository ppa:ubuntu-mate-dev/xenial-mate
-	# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FB01CC26162506E7
-	sudo apt update
-	sudo apt full-upgrade
+- Innstall
+
+	sudo add-apt-repository ppa:jonathonf/mate-1.18
+	#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
+	sudo apt update && sudo apt full-upgrade
+	sudo apt update && sudo apt install mate-core mate-desktop-environment
+	sudo apt install --install-suggests mate-desktop
+	
+- Uninstall:
+	
+	sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/mate-1.18
+	
+- References:
+
+    - http://tipsonubuntu.com/2017/03/15/install-mate-desktop-1-18-in-ubuntu-16-04/
+    - http://tipsonubuntu.com/2016/09/23/install-mate-desktop-1-16-ubuntu-16-04/
+    - https://ubuntu-mate.org/blog/mate-desktop-116-for-xenial-xerus/
+	
+	
