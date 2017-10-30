@@ -61,10 +61,8 @@ fi
 # [6.] Execute the list of the input commands
 if [ -z "${1+x}" ]; then
 	printf '\n\nThere is not any input command!\n'
-	printf '\n\nThere is not any input command!\n'
 else
 	execute_input_commands "$1"
 fi
 
-# Debug
-cat "$LOG"
+# Debug cat "$LOG"
