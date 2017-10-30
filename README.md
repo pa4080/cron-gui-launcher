@@ -17,6 +17,7 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 ## How it works
 
 0. Note about the logging: The script will create a log file located in `/tmp`, which name shall be 
+
 	````bash
 	$USER-cron-gui-launcher-$DESCRIPTION.log
 	````
@@ -61,15 +62,15 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 - Innstall
 
-	sudo add-apt-repository ppa:jonathonf/mate-1.18
-	#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
-	sudo apt update && sudo apt full-upgrade
-	sudo apt update && sudo apt install mate-core mate-desktop-environment
-	sudo apt install --install-suggests mate-desktop
+		sudo add-apt-repository ppa:jonathonf/mate-1.18
+		#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
+		sudo apt update && sudo apt full-upgrade
+		sudo apt update && sudo apt install mate-core mate-desktop-environment
+		sudo apt install --install-suggests mate-desktop
 	
 - Uninstall:
 	
-	sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/mate-1.18
+		sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/mate-1.18
 	
 - References:
 
