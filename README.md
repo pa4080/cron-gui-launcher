@@ -55,3 +55,11 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	
 ## Origins
 
+## Desctop environments installation
+
+### Mate
+
+	sudo apt-add-repository ppa:ubuntu-mate-dev/xenial-mate
+	# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FB01CC26162506E7
+	sudo apt update
+	sudo apt full-upgrade
