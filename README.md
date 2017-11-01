@@ -57,13 +57,14 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 ## Desctop environments installation
 
-### Gnome Shell 
+### Gnome Shell | Ubuntu Gnome Desktop
 
 - Install
 
 		sudo apt update
 		sudo apt install ubuntu-gnome-desktop
-		dpkg-reconfigure lightdm 		# dpkg-reconfigure gdm3
+		dpkg-reconfigure lightdm 		
+		# dpkg-reconfigure gdm3
 		
 - Uninstall 
 
@@ -77,7 +78,27 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 	
 
-### Mate
+
+### XFCE4 | XUbuntu Gnome
+
+- Install
+
+		sudo apt update
+		sudo apt-get install xubuntu-desktop
+		# sudo apt-get install xfce4
+		dpkg-reconfigure lightdm 		
+		# dpkg-reconfigure gdm3
+		
+- Uninstall 
+
+		sudo apt remove --purge xubuntu-desktop
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+
+- References:
+
+    - https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity
+    
+### Mate | Ubuntu Mate
 
 - Innstall
 
