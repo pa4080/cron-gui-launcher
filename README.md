@@ -36,7 +36,7 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 2. Create an array of the values of the envvar `$XDG_CURRENT_DESKTOP` from each <a href="http://manpages.ubuntu.com/manpages/trusty/man5/proc.5.html">`/proc/$ProcessNumber/environ`</a> file. The command `pgrep -U "$UID"` creates a list of all `$USER`'s processes. The function `get_environ()` is executed for each `$USER`'s process and its output is stored into the temporal array `XDG_CURRENT_DESKTOP+=$()`.
 
-3. Get the name of the current Desktop Environment. Get the most frequent value from the array created in step 2. This is the way, used here, to find the current DE when it is changed a little bit ago. The function `get_frequent()` is used here and its output is stored as value of the variable `$XDG_CURRENT_DESKTOP`.
+3. Get the name of the current Desktop Environment. <a href="https://stackoverflow.com/questions/43440425/most-frequent-element-in-an-array-bash-3-2">Get the most frequent value from the array</a> created in step 2. This is the way, used here, to find the current DE when it is changed a little bit ago. The function `get_frequent()` is used here and its output is stored as value of the variable `$XDG_CURRENT_DESKTOP`.
 
 4. Filter the value of the variable `$XDG_CURRENT_DESKTOP` and set the result as value of the triger `$DE`.
 
@@ -46,8 +46,7 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 ## Supported/Tested Desktop Environments
 
-	
-	unity | gnome | gnome-classic 	[Ubuntu Unity] [Ubuntu Gnome] [Gnome Classic] [Open Box]
+	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome] [Gnome Classic] [Open Box] [Gnome Flashbach (compis|metacity)]
 	lxde				[Lubuntu] [Lubuntu Netbook] [LXDE]
 	kde				[Kubuntu] [KDE Plasma]
 	xfce | xfce4			[Xubuntu] [XFCE] [XFCE4]
@@ -57,6 +56,26 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 ## Origins
 
 ## Desctop environments installation
+
+### Gnome Shell 
+
+- Install
+
+		sudo apt update
+		sudo apt install ubuntu-gnome-desktop
+		dpkg-reconfigure lightdm 		# dpkg-reconfigure gdm3
+		
+- Uninstall 
+
+		sudo apt remove --purge ubuntu-gnome-desktop
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+
+- References:
+
+    - https://askubuntu.com/questions/766071/install-gnome-shell-on-ubuntu-16-04
+    - https://askubuntu.com/questions/781559/using-gnome-in-ubuntu-16-04-lts
+
+	
 
 ### Mate
 
@@ -70,7 +89,9 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	
 - Uninstall:
 	
-		sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/mate-1.18
+		sudo apt install ppa-purge 
+		sudo ppa-purge ppa:jonathonf/mate-1.18
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
 	
 - References:
 
