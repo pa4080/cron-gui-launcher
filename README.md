@@ -66,8 +66,6 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 		sudo apt update
 		sudo apt install ubuntu-gnome-desktop
-		dpkg-reconfigure lightdm 		
-		# dpkg-reconfigure gdm3
 		
 - Uninstall 
 
@@ -82,15 +80,13 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	
 
 
-### XFCE4 | XUbuntu Gnome
+### XFCE4 | XUbuntu Desktop
 
 - Install
 
 		sudo apt update
 		sudo apt-get install xubuntu-desktop
 		# sudo apt-get install xfce4
-		dpkg-reconfigure lightdm 		
-		# dpkg-reconfigure gdm3
 		
 - Uninstall 
 
@@ -100,6 +96,23 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 - References:
 
     - https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity
+
+### LXDE | Lubuntu Desktop
+
+- Install
+
+		sudo apt update
+		sudo apt-get install lubuntu-desktop
+		# sudo apt-get install lxde
+		
+- Uninstall 
+
+		sudo apt remove --purge lubuntu-desktop
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+
+- References:
+
+    - https://www.howtogeek.com/107368/how-to-install-the-lightweight-lxde-desktop-on-ubuntu/
     
 ### Mate | Ubuntu Mate
 
@@ -123,4 +136,9 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
     - http://tipsonubuntu.com/2016/09/23/install-mate-desktop-1-16-ubuntu-16-04/
     - https://ubuntu-mate.org/blog/mate-desktop-116-for-xenial-xerus/
 	
-	
+### Recovery from some issues
+
+- Chande the window manager
+
+		sudo dpkg-reconfigure lightdm 		
+		# sudo dpkg-reconfigure gdm3
