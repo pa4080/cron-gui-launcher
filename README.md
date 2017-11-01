@@ -46,12 +46,15 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 ## Supported/Tested Desktop Environments
 
-	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome] [Gnome Classic] [Open Box] [Gnome Flashbach (compis|metacity)]
+	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome Desktopt] [Gnome Classic] [Open Box] [Gnome Flashbach (compis|metacity)]
+	$(pgrep xfce4-session -n -U $UID)	[Xubuntu] [XFCE] [XFCE4]
+	$(pgrep mate-session -n -U $UID)	[MATE] [Open Box]
+	
 	lxde				[Lubuntu] [Lubuntu Netbook] [LXDE]
 	kde				[Kubuntu] [KDE Plasma]
-	xfce | xfce4			[Xubuntu] [XFCE] [XFCE4]
+
 	x-cinnamon			[Cinnamon] [Cinnamon2d]
-	mate 				[MATE] [Open Box]
+	
 	
 ## Origins
 
