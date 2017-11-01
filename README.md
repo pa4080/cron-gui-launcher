@@ -46,14 +46,14 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 ## Supported/Tested Desktop Environments
 
-	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome Desktopt] [Gnome Classic] [Open Box] [Gnome Flashbach (compis|metacity)]
-	$(pgrep xfce4-session -n -U $UID)	[Xubuntu] [XFCE] [XFCE4]
-	$(pgrep mate-session -n -U $UID)	[MATE] [Open Box]
+	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome Desktopt] [Gnome Classic | Open Box | Flashbach (compis|metacity)]
+	$(pgrep xfce4-session -n -U $UID)	 [Xubuntu] [XFCE] [XFCE4]
+	$(pgrep mate-session -n -U $UID)	 [Ubuntu MATE] [Open Box]
+	$(pgrep lxsession -n -U $UID)		 [Lubuntu] [Lubuntu Netbook] [LXDE]
+	echo $(pgrep cinnamon-sessio -n -U $UID) [Cinnamon] [Cinnamon2d] [Cinnamon (Software Rendering)]
 	
-	lxde				[Lubuntu] [Lubuntu Netbook] [LXDE]
 	kde				[Kubuntu] [KDE Plasma]
 
-	x-cinnamon			[Cinnamon] [Cinnamon2d]
 	
 	
 ## Origins
@@ -77,9 +77,6 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
     - https://askubuntu.com/questions/766071/install-gnome-shell-on-ubuntu-16-04
     - https://askubuntu.com/questions/781559/using-gnome-in-ubuntu-16-04-lts
 
-	
-
-
 ### XFCE4 | XUbuntu Desktop
 
 - Install
@@ -96,8 +93,9 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 - References:
 
     - https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity
+    - https://askubuntu.com/questions/65861/how-to-i-change-from-ubuntu-to-xubuntu
 
-### LXDE | Lubuntu Desktop
+### LXDE | Lubuntu Desktop (Lubuntu Netbook)
 
 - Install
 
@@ -115,8 +113,8 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
     - https://www.howtogeek.com/107368/how-to-install-the-lightweight-lxde-desktop-on-ubuntu/
     
 ### Mate | Ubuntu Mate
-
-- Innstall
+		
+- Innstall Mate from PPA
 
 		sudo add-apt-repository ppa:jonathonf/mate-1.18
 		#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
@@ -129,13 +127,39 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 		sudo apt install ppa-purge 
 		sudo ppa-purge ppa:jonathonf/mate-1.18
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
-	
+
+
+- Alternativelly Install Ubuntu Mate Desktop
+
+		sudo apt install ubuntu-mate-desktop
+		sudo apt install ubuntu-mate-core ubuntu-mate-desktop
+		
 - References:
 
     - http://tipsonubuntu.com/2017/03/15/install-mate-desktop-1-18-in-ubuntu-16-04/
     - http://tipsonubuntu.com/2016/09/23/install-mate-desktop-1-16-ubuntu-16-04/
     - https://ubuntu-mate.org/blog/mate-desktop-116-for-xenial-xerus/
+    - https://askubuntu.com/questions/87040/how-do-i-install-mate-the-desktop-environment
+    
+### Cinnamon Desktop (Mint) | Cinnamon2d | Cinnamon (Software Rendering)
+
+- Innstall
+
+		udo add-apt-repository ppa:embrosyn/cinnamon
+		#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys XXXXX
+		sudo apt update && sudo apt upgrade
+		sudo apt-get install cinnamon
 	
+- Uninstall:
+	
+		sudo apt install ppa-purge 
+		sudo ppa-purge ppa:embrosyn/cinnamon
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - https://www.tecmint.com/install-cinnamon-desktop-in-ubuntu-fedora-workstations/
+    	
 ### Recovery from some issues
 
 - Chande the window manager
