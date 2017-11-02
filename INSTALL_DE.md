@@ -42,7 +42,11 @@
 
 		sudo apt update
 		sudo apt-get install lubuntu-desktop
-		# sudo apt-get install lxde
+
+- Alternatively install only LXDE:
+
+		sudo apt update
+		sudo apt-get install lxde
 		
 - Uninstall 
 
@@ -51,7 +55,7 @@
 
 - References:
 
-    - https://www.howtogeek.com/107368/how-to-install-the-lightweight-lxde-desktop-on-ubuntu/
+    - [How to Install the Lightweight LXDE Desktop on Ubuntu](https://www.howtogeek.com/107368/how-to-install-the-lightweight-lxde-desktop-on-ubuntu/)
     
     
 
@@ -80,7 +84,7 @@
 - Innstall Mate from PPA
 
 		sudo add-apt-repository ppa:jonathonf/mate-1.18
-		#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
+		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
 		sudo apt update && sudo apt full-upgrade
 		sudo apt update && sudo apt install mate-core mate-desktop-environment
 		sudo apt install --install-suggests mate-desktop
@@ -99,17 +103,16 @@
 		
 - References:
 
-    - http://tipsonubuntu.com/2017/03/15/install-mate-desktop-1-18-in-ubuntu-16-04/
-    - http://tipsonubuntu.com/2016/09/23/install-mate-desktop-1-16-ubuntu-16-04/
-    - https://ubuntu-mate.org/blog/mate-desktop-116-for-xenial-xerus/
-    - https://askubuntu.com/questions/87040/how-do-i-install-mate-the-desktop-environment
+    - [How to Install MATE Desktop 1.18 in Ubuntu 16.04](http://tipsonubuntu.com/2017/03/15/install-mate-desktop-1-18-in-ubuntu-16-04/)
+    - [How to Install MATE Desktop 1.16 in Ubuntu 16.04](http://tipsonubuntu.com/2016/09/23/install-mate-desktop-1-16-ubuntu-16-04/)
+    - [MATE Desktop 1.16 for Ubuntu MATE 16.04](https://ubuntu-mate.org/blog/mate-desktop-116-for-xenial-xerus/)
+    - [How do I install MATE (the desktop environment)?](https://askubuntu.com/questions/87040/how-do-i-install-mate-the-desktop-environment)
     
 ## Cinnamon Desktop (Mint) | Cinnamon2d | Cinnamon (Software Rendering)
 
 - Innstall
 
-		udo add-apt-repository ppa:embrosyn/cinnamon
-		#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys XXXXX
+		sudo add-apt-repository ppa:embrosyn/cinnamon
 		sudo apt update && sudo apt upgrade
 		sudo apt-get install cinnamon
 	
@@ -121,7 +124,7 @@
 	
 - References:
 
-    - https://www.tecmint.com/install-cinnamon-desktop-in-ubuntu-fedora-workstations/
+    - [How to Install Latest Cinnamon Desktop in Ubuntu and Fedora](https://www.tecmint.com/install-cinnamon-desktop-in-ubuntu-fedora-workstations/)
 
 
 ## KDE Plasma | Kubuntu 
@@ -139,10 +142,38 @@
 	
 - References:
 
-    - https://askubuntu.com/questions/764542/help-installing-kubuntu-desktop-on-ubuntu-16-04
-    - https://askubuntu.com/questions/768786/unable-to-install-kubuntu-desktop-in-ubuntu-16-04-lts
+    - [Help installing kubuntu-desktop on Ubuntu 16.04](https://askubuntu.com/questions/764542/help-installing-kubuntu-desktop-on-ubuntu-16-04)
+    - [Unable to install kubuntu-Desktop in ubuntu 16.04 Lts](https://askubuntu.com/questions/768786/unable-to-install-kubuntu-desktop-in-ubuntu-16-04-lts)
+
+## Pantheon - desn't work at all!
+
+- <s>Innstall:
+
+		sudo add-apt-repository ppa:elementary-os/stable
+		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59
+		sudo apt update && sudo apt dist-upgrade
+		sudo apt install elementary-desktop
+		sudo apt install elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
+		
+		sudo add-apt-repository ppa:elementary-os/daily && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
+		sudo add-apt-repository add-apt-repository ppa:elementary-os/os-patches && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
+		sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
+		#sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BFF792D0 && sudo apt update && sudo apt upgrade
+		sudo apt install elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
+	
+- Uninstall:
+	
+		sudo apt install ppa-purge 
+		sudo ppa-purge ppa:elementary-os/stable # etc..
+		sudo apt update && sudo apt autoremove && sudo apt autoclean<s/>
+	
+- References:
+
+    - [How do you install Pantheon on Ubuntu 16.04?](https://askubuntu.com/questions/766673/how-do-you-install-pantheon-on-ubuntu-16-04)
+    - [How To Install Pantheon Desktop In Ubuntu](https://www.linuxhelp.com/how-to-install-pantheon-desktop-in-ubuntu/)
     
-# Ubuntu Desktop Recovery
+    
+# Ubuntu Desktop Install / Reinstall / Recovery
 
 - Reinstall:
 
