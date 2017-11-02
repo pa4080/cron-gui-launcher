@@ -14,8 +14,8 @@
 
 - References:
 
-    - https://askubuntu.com/questions/766071/install-gnome-shell-on-ubuntu-16-04
-    - https://askubuntu.com/questions/781559/using-gnome-in-ubuntu-16-04-lts
+    - [Install gnome-shell on ubuntu 16.04](https://askubuntu.com/questions/766071/install-gnome-shell-on-ubuntu-16-04)
+    - [Using GNOME in ubuntu 16.04 LTS](https://askubuntu.com/questions/781559/using-gnome-in-ubuntu-16-04-lts)
 
 ## XFCE4 | XUbuntu Desktop
 
@@ -52,6 +52,28 @@
 - References:
 
     - https://www.howtogeek.com/107368/how-to-install-the-lightweight-lxde-desktop-on-ubuntu/
+    
+    
+
+## LXQt
+
+- Install
+
+		sudo apt update
+		sudo apt install lxqt lxqt-session* openbox
+	
+	It is possible, when you log into LXQt, to be asked to set default session mannager - choose `open` (`/usr/bin/openbox`). Recovery from wrong sesion manager: establish `ssh -X` connection, run `lxqt-config-session` and change the session manager.
+		
+- Uninstall 
+
+		sudo apt remove --purge lxqt lxqt-session*
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+
+- References:
+
+    - [Ubuntu LXQt / Lubuntu](https://wiki.ubuntu.com/Lubuntu/LXQt) | [LXQt.org](http://lxqt.org/)
+    - [How to Install Latest LXQt Desktop in Ubuntu 16.04/16.10 and Fedora 22-24](https://www.tecmint.com/install-lxqt-desktop-in-ubuntu-fedora/)
+    - [LXQt-Session at GitHub](https://github.com/lxde/lxqt-session)
     
 ## Mate | Ubuntu Mate
 		
