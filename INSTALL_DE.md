@@ -147,6 +147,6 @@
 
     - [**Restore Unity Greeter**](https://askubuntu.com/a/550404/566421)
     - [**How do I change the wallpaper of the login screen?**](https://askubuntu.com/questions/64001/how-do-i-change-the-wallpaper-of-the-login-screen)
-    - [**https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
+    - [**How do I set the LightDM wallpaper in Ubuntu 14.04?**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
     - https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager
     - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
