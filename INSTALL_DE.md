@@ -128,7 +128,7 @@
 		sudo apt-get install --reinstall ubuntu-desktop
 		sudo apt-get install --reinstall unity
 		
-- Chande the login manager manager:
+- Chande the display manager (greeter):
 
 		#sudo dpkg-reconfigure lightdm 		
 		#sudo dpkg-reconfigure gdm3
@@ -151,4 +151,5 @@
     - [**How do I set the LightDM wallpaper in Ubuntu 14.04?**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
     - https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager
     - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
-     - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
+    - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
+    - [How to Choose & Switch Linux Display Managers](http://www.makeuseof.com/tag/choose-switch-linux-display-managers/) 
