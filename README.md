@@ -50,6 +50,7 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	$(pgrep xfce4-session -n -U $UID)	[Xubuntu] [XFCE] [XFCE4]
 	$(pgrep mate-session -n -U $UID)	[Ubuntu MATE] [Open Box]
 	$(pgrep lxsession -n -U $UID)		[Lubuntu] [Lubuntu Netbook] [LXDE]
+	$(pgrep lxqt-session -n -U $UID)	[LXQt]
 	$(pgrep cinnamon-sessio -n -U $UID)	[Cinnamon] [Cinnamon2d] [Cinnamon (Software Rendering)]
 	$(pgrep startkde -n -U $UID)		[Kubuntu] [KDE Plasma]
 
