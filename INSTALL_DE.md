@@ -34,6 +34,7 @@
 
     - https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity
     - https://askubuntu.com/questions/65861/how-to-i-change-from-ubuntu-to-xubuntu
+    - [Desctop Icons Recovery 1](https://askubuntu.com/questions/451847/desktop-icons-not-showing-up-in-xubuntu-and-i-cant-right-click-on-the-desktop) | [Desctop Icons Recovery 2](https://bbs.archlinux.org/viewtopic.php?id=127138) 
 
 ## LXDE | Lubuntu Desktop (Lubuntu Netbook)
 
@@ -127,22 +128,22 @@
 		sudo apt-get install --reinstall ubuntu-desktop
 		sudo apt-get install --reinstall unity
 		
-- References:
-
-    - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
-    
-# Recovery from some common issues
-
-- Chande the login manager manager | Restore Unity Greeter:
+- Chande the login manager manager:
 
 		#sudo dpkg-reconfigure lightdm 		
 		#sudo dpkg-reconfigure gdm3
 		#sudo dpkg-reconfigure sddm
-		
+
+- Restore Unity Greeter:
+
 		sudo apt remove --purge lightdm-gtk-greeter
 		sudo apt remove --purge sddm
 		sudo apt remove --purge sddm
-	
+
+- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** installation:
+
+		gsettings set org.gnome.desktop.background show-desktop-icons true
+
 - References:
 
     - [**Restore Unity Greeter**](https://askubuntu.com/a/550404/566421)
@@ -150,3 +151,4 @@
     - [**How do I set the LightDM wallpaper in Ubuntu 14.04?**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
     - https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager
     - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
+     - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
