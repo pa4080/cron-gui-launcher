@@ -1,6 +1,6 @@
-## Desctop environments installation
+# Desctop environments installation
 
-### Gnome Shell | Ubuntu Gnome Desktop
+## Gnome Shell | Ubuntu Gnome Desktop
 
 - Install
 
@@ -17,7 +17,7 @@
     - https://askubuntu.com/questions/766071/install-gnome-shell-on-ubuntu-16-04
     - https://askubuntu.com/questions/781559/using-gnome-in-ubuntu-16-04-lts
 
-### XFCE4 | XUbuntu Desktop
+## XFCE4 | XUbuntu Desktop
 
 - Install
 
@@ -35,7 +35,7 @@
     - https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity
     - https://askubuntu.com/questions/65861/how-to-i-change-from-ubuntu-to-xubuntu
 
-### LXDE | Lubuntu Desktop (Lubuntu Netbook)
+## LXDE | Lubuntu Desktop (Lubuntu Netbook)
 
 - Install
 
@@ -52,7 +52,7 @@
 
     - https://www.howtogeek.com/107368/how-to-install-the-lightweight-lxde-desktop-on-ubuntu/
     
-### Mate | Ubuntu Mate
+## Mate | Ubuntu Mate
 		
 - Innstall Mate from PPA
 
@@ -81,7 +81,7 @@
     - https://ubuntu-mate.org/blog/mate-desktop-116-for-xenial-xerus/
     - https://askubuntu.com/questions/87040/how-do-i-install-mate-the-desktop-environment
     
-### Cinnamon Desktop (Mint) | Cinnamon2d | Cinnamon (Software Rendering)
+## Cinnamon Desktop (Mint) | Cinnamon2d | Cinnamon (Software Rendering)
 
 - Innstall
 
@@ -99,10 +99,54 @@
 - References:
 
     - https://www.tecmint.com/install-cinnamon-desktop-in-ubuntu-fedora-workstations/
-    	
-### Recovery from some issues
 
-- Chande the window manager
 
-		sudo dpkg-reconfigure lightdm 		
-		# sudo dpkg-reconfigure gdm3
+## KDE Plasma | Kubuntu 
+
+- Innstall
+		sudo apt-get install kubuntu-desktop
+		# Recovery
+		sudo dpkg -i --force-overwrite  /var/cache/apt/archives/kde-config-telepathy-accounts_4%3a15.12.3-0ubuntu1_amd64.deb
+		sudo apt-get install -f
+	
+- Uninstall:
+	
+		sudo apt remove --purge kubuntu-desktop
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - https://askubuntu.com/questions/764542/help-installing-kubuntu-desktop-on-ubuntu-16-04
+    - https://askubuntu.com/questions/768786/unable-to-install-kubuntu-desktop-in-ubuntu-16-04-lts
+    
+# Ubuntu Desktop Recovery
+
+- Reinstall:
+
+		sudo apt-get update
+		sudo apt-get install --reinstall ubuntu-desktop
+		sudo apt-get install --reinstall unity
+		
+- References:
+
+    - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
+    
+# Recovery from some common issues
+
+- Chande the login manager manager | Restore Unity Greeter:
+
+		#sudo dpkg-reconfigure lightdm 		
+		#sudo dpkg-reconfigure gdm3
+		#sudo dpkg-reconfigure sddm
+		
+		sudo apt remove --purge lightdm-gtk-greeter
+		sudo apt remove --purge sddm
+		sudo apt remove --purge sddm
+	
+- References:
+
+    - [**Restore Unity Greeter**](https://askubuntu.com/a/550404/566421)
+    - [**How do I change the wallpaper of the login screen?**](https://askubuntu.com/questions/64001/how-do-i-change-the-wallpaper-of-the-login-screen)
+    - [**https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
+    - https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager
+    - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
