@@ -145,7 +145,7 @@
     - [Help installing kubuntu-desktop on Ubuntu 16.04](https://askubuntu.com/questions/764542/help-installing-kubuntu-desktop-on-ubuntu-16-04)
     - [Unable to install kubuntu-Desktop in ubuntu 16.04 Lts](https://askubuntu.com/questions/768786/unable-to-install-kubuntu-desktop-in-ubuntu-16-04-lts)
     
-## The Lumina® Desktop Environment | Fluxbox?
+## The Lumina® Desktop Environment
 
 - Innstall
 
