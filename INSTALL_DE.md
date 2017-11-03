@@ -144,6 +144,25 @@
 
     - [Help installing kubuntu-desktop on Ubuntu 16.04](https://askubuntu.com/questions/764542/help-installing-kubuntu-desktop-on-ubuntu-16-04)
     - [Unable to install kubuntu-Desktop in ubuntu 16.04 Lts](https://askubuntu.com/questions/768786/unable-to-install-kubuntu-desktop-in-ubuntu-16-04-lts)
+    
+## The Lumina® Desktop Environment | Fluxbox
+
+- Innstall
+		sudo add-apt-repository ppa:samoilov-lex/lumina-desktop
+		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FA1A38EB
+		sudo apt update
+		sudo apt install lumina-desktop qterminal
+	
+- Uninstall:
+	
+		sudo apt install ppa-purge 
+		sudo ppa-purge ppa:samoilov-lex/lumina-desktop
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - [What kinds of desktop environments and shells are available? | The Lumina® Desktop Environment](https://askubuntu.com/a/832713/566421)
+    
 
 ## Pantheon - desn't work at all!
 
@@ -160,18 +179,18 @@
 		sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
 		#sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BFF792D0 && sudo apt update && sudo apt upgrade
 		sudo apt install elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
-	
-- Uninstall:
+	</s>
+- <s>Uninstall:
 	
 		sudo apt install ppa-purge 
 		sudo ppa-purge ppa:elementary-os/stable # etc..
 		sudo apt update && sudo apt autoremove && sudo apt autoclean</s>
-	
-- References:
+	</s>
+- <s>References:
 
     - [How do you install Pantheon on Ubuntu 16.04?](https://askubuntu.com/questions/766673/how-do-you-install-pantheon-on-ubuntu-16-04)
     - [How To Install Pantheon Desktop In Ubuntu](https://www.linuxhelp.com/how-to-install-pantheon-desktop-in-ubuntu/)
-    
+    </s>
     
 # Ubuntu Desktop Install / Reinstall / Recovery
 
