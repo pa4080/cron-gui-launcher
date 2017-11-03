@@ -53,6 +53,8 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	$(pgrep lxqt-session -n -U $UID)	[LXQt]
 	$(pgrep cinnamon-sessio -n -U $UID)	[Cinnamon] [Cinnamon2d] [Cinnamon (Software Rendering)]
 	$(pgrep startkde -n -U $UID)		[Kubuntu] [KDE Plasma]
+	$(pgrep start-lumina-de -n -U $UID)	[Lumina]  (The Lumina® Desktop Environment)
+	$(pgrep fluxbox -n -U $UID)		[Fluxbox] (The Lumina® Desktop Environment)
 
 	
 	
