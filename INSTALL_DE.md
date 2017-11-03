@@ -164,7 +164,23 @@
 
     - [What kinds of desktop environments and shells are available? | The Lumina® Desktop Environment](https://askubuntu.com/a/832713/566421)
     
+## Xmonad
 
+- Innstall
+
+		sudo apt-get install xmonad xmobar trayer
+		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FA1A38EB
+		sudo apt update && sudo apt upgrade
+	
+- Uninstall:
+	
+		sudo apt install remove --purge xmonad xmobar trayer 
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - [What kinds of desktop environments and shells are available? | Xmonad](https://askubuntu.com/a/871567/566421)
+    
 ## Pantheon - desn't work at all!
 
 - <s>Innstall:
@@ -213,7 +229,7 @@
 		sudo apt remove --purge sddm
 		sudo apt remove --purge sddm
 
-- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** installation:
+- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** (etc.) installation:
 
 		gsettings set org.gnome.desktop.background show-desktop-icons true
 
@@ -222,7 +238,7 @@
     - [**Restore Unity Greeter**](https://askubuntu.com/a/550404/566421)
     - [**How do I change the wallpaper of the login screen?**](https://askubuntu.com/questions/64001/how-do-i-change-the-wallpaper-of-the-login-screen)
     - [**How do I set the LightDM wallpaper in Ubuntu 14.04?**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
-    - https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager
+    - [How can I make LightDM the default display manager?](https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager)
     - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
     - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
     - [How to Choose & Switch Linux Display Managers](http://www.makeuseof.com/tag/choose-switch-linux-display-managers/) 
