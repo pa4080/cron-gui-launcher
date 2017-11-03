@@ -171,10 +171,26 @@
 		sudo apt-get install xmonad xmobar trayer
 		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FA1A38EB
 		sudo apt update && sudo apt upgrade
+
+- Uninstall:
+	
+		sudo apt remove --purge xmonad xmobar trayer 
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - [What kinds of desktop environments and shells are available? | Xmonad](https://askubuntu.com/a/871567/566421)
+    
+## Subtle
+
+- Innstall
+
+		sudo apt install subtle
+		sudo apt update && sudo apt upgrade
 	
 - Uninstall:
 	
-		sudo apt install remove --purge xmonad xmobar trayer 
+		sudo apt remove --purge subtle 
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
 	
 - References:
