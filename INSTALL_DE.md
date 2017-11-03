@@ -2,12 +2,16 @@
 
 ## Gnome Shell | Ubuntu Gnome Desktop
 
-- Install
+- Install:
 
 		sudo apt update
 		sudo apt install ubuntu-gnome-desktop
+
+- Only Gnome Shell:
+
+		sudo apt install gnome-shell
 		
-- Uninstall 
+- Uninstall:
 
 		sudo apt remove --purge ubuntu-gnome-desktop
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
@@ -16,16 +20,18 @@
 
     - [Install gnome-shell on ubuntu 16.04](https://askubuntu.com/questions/766071/install-gnome-shell-on-ubuntu-16-04)
     - [Using GNOME in ubuntu 16.04 LTS](https://askubuntu.com/questions/781559/using-gnome-in-ubuntu-16-04-lts)
+    - [What kinds of desktop environments and shells are available? | GNOME Shell](https://askubuntu.com/a/65223/566421)
+    
 
 ## XFCE4 | XUbuntu Desktop
 
-- Install
+- Install:
 
 		sudo apt update
 		sudo apt-get install xubuntu-desktop
 		# sudo apt-get install xfce4
 		
-- Uninstall 
+- Uninstall:
 
 		sudo apt remove --purge xubuntu-desktop
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
