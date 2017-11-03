@@ -165,7 +165,7 @@
 	
 		sudo apt install ppa-purge 
 		sudo ppa-purge ppa:elementary-os/stable # etc..
-		sudo apt update && sudo apt autoremove && sudo apt autoclean<s/>
+		sudo apt update && sudo apt autoremove && sudo apt autoclean</s>
 	
 - References:
 
