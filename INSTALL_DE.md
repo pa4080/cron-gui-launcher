@@ -148,6 +148,7 @@
 ## The Lumina® Desktop Environment | Fluxbox
 
 - Innstall
+
 		sudo add-apt-repository ppa:samoilov-lex/lumina-desktop
 		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FA1A38EB
 		sudo apt update
