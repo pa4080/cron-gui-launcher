@@ -32,8 +32,8 @@
 
 - References:
 
-    - https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity
-    - https://askubuntu.com/questions/65861/how-to-i-change-from-ubuntu-to-xubuntu
+    - [How can I install XFCE along side Unity?](https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity)
+    - [How to I change from Ubuntu to Xubuntu?](https://askubuntu.com/questions/65861/how-to-i-change-from-ubuntu-to-xubuntu)
     - [Desctop Icons Recovery 1](https://askubuntu.com/questions/451847/desktop-icons-not-showing-up-in-xubuntu-and-i-cant-right-click-on-the-desktop) | [Desctop Icons Recovery 2](https://bbs.archlinux.org/viewtopic.php?id=127138) 
 
 ## LXDE | Lubuntu Desktop (Lubuntu Netbook)
