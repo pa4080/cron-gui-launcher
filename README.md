@@ -55,6 +55,7 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	$(pgrep startkde -n -U $UID)		[Kubuntu] [KDE Plasma]
 	$(pgrep start-lumina-de -n -U $UID)	[Lumina]  (The Lumina® Desktop Environment)
 	$(pgrep fluxbox -n -U $UID)		[Fluxbox] (The Lumina® Desktop Environment)
+	$(pgrep xmonad -n -U $UID)		[Xmonad]
 
 	
 	
