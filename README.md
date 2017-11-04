@@ -47,8 +47,8 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 ## Supported/Tested Desktop Environments
 
 	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome Desktopt] [Gnome Classic | Open Box | Flashbach (compis|metacity)]
-	$(pgrep xfce4-session -n -U $UID)	[Xubuntu] [XFCE] [XFCE4]
-	$(pgrep mate-session -n -U $UID)	[Ubuntu MATE] [Open Box]
+	$(pgrep xfce4-session -n -U $UID)	[Xubuntu] [XFCE4]
+	$(pgrep mate-session -n -U $UID)	[Ubuntu MATE] [OpenBox]
 	$(pgrep lxsession -n -U $UID)		[Lubuntu] [Lubuntu Netbook] [LXDE]
 	$(pgrep lxqt-session -n -U $UID)	[LXQt]
 	$(pgrep cinnamon-sessio -n -U $UID)	[Cinnamon] [Cinnamon2d] [Cinnamon (Software Rendering)]
@@ -60,6 +60,7 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	$(pgrep awesome -n -U $UID)		[Awesome]
 	$(pgrep enlightenment -n -U $UID)	[Enlightenment]
 	$(pgrep i3bar -n -U $UID)		[i3wm]
+	$(pgrep openbox -n -U $UID)		[Openbox] [GNOME/Openbox KDE/Openbox]
 
 	
 	
