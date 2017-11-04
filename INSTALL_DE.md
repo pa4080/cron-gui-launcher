@@ -28,8 +28,8 @@
     - [**How do I change the wallpaper of the login screen?**](https://askubuntu.com/questions/64001/how-do-i-change-the-wallpaper-of-the-login-screen)
     - [**How do I set the LightDM wallpaper in Ubuntu 14.04?**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
     - [How can I make LightDM the default display manager?](https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager)
-    - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
-    - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
+    - [How to purge SDDM/Plasma completely](https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely)
+    - [How do I reinstall Unity?](https://askubuntu.com/questions/95458/how-do-i-reinstall-unity)
     - [How to Choose & Switch Linux Display Managers](http://www.makeuseof.com/tag/choose-switch-linux-display-managers/) 
     
 # Desctop Environments installation
