@@ -375,3 +375,27 @@ The PPA's from the following links don't work [**1**](https://askubuntu.com/a/34
 
     - [What kinds of desktop environments and shells are available? | Trinity](https://askubuntu.com/a/286547/566421)
     - [Trinity Desktop Project Wiki : **Ubuntu Trinity Repository** Installation Instructions](https://wiki.trinitydesktop.org/UbuntuInstall)
+    
+## Budgie
+
+- Install 17.04+:
+
+		sudo apt install ubuntu-budgie-desktop
+		
+- Install 16.04:
+
+		sudo add-apt-repository ppa:budgie-remix/ppa
+		sudo apt update
+		sudo apt install ubuntu-budgie-desktop
+			
+- Uninstall:
+	
+		sudo apt-get remove --purge ubuntu-budgie-desktop 
+		sudo apt install ppa-purge 
+		sudo ppa-purge ppa:budgie-remix/ppa
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+		
+- References:
+
+    - [What kinds of desktop environments and shells are available? | Budgie](https://askubuntu.com/a/753467/566421)
+    - [Solus Budgie](https://solus-project.com/download/)
