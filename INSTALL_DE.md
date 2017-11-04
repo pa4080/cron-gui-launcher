@@ -44,7 +44,7 @@
 
 ## LXDE | Lubuntu Desktop (Lubuntu Netbook)
 
-- Install
+- Install:
 
 		sudo apt update
 		sudo apt-get install lubuntu-desktop
@@ -54,7 +54,7 @@
 		sudo apt update
 		sudo apt-get install lxde
 		
-- Uninstall 
+- Uninstall:
 
 		sudo apt remove --purge lubuntu-desktop
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
@@ -67,14 +67,14 @@
 
 ## LXQt
 
-- Install
+- Install:
 
 		sudo apt update
 		sudo apt install lxqt lxqt-session* openbox
 	
 	It is possible, when you log into LXQt, to be asked to set default session mannager - choose `open` (`/usr/bin/openbox`). Recovery from wrong sesion manager: establish `ssh -X` connection, run `lxqt-config-session` and change the session manager.
 		
-- Uninstall 
+- Uninstall:
 
 		sudo apt remove --purge lxqt lxqt-session*
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
@@ -87,7 +87,7 @@
     
 ## Mate | Ubuntu Mate
 		
-- Innstall Mate from PPA
+- Install Mate from PPA:
 
 		sudo add-apt-repository ppa:jonathonf/mate-1.18
 		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
@@ -102,7 +102,7 @@
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
 
 
-- Alternativelly Install Ubuntu Mate Desktop
+- Alternativelly Install Ubuntu Mate Desktop:
 
 		sudo apt install ubuntu-mate-desktop
 		sudo apt install ubuntu-mate-core ubuntu-mate-desktop
@@ -116,7 +116,7 @@
     
 ## Cinnamon Desktop (Mint) | Cinnamon2d | Cinnamon (Software Rendering)
 
-- Innstall
+- Install:
 
 		sudo add-apt-repository ppa:embrosyn/cinnamon
 		sudo apt update && sudo apt upgrade
@@ -135,7 +135,7 @@
 
 ## KDE Plasma | Kubuntu 
 
-- Innstall
+- Install:
 		sudo apt-get install kubuntu-desktop
 		# Recovery
 		sudo dpkg -i --force-overwrite  /var/cache/apt/archives/kde-config-telepathy-accounts_4%3a15.12.3-0ubuntu1_amd64.deb
@@ -153,7 +153,7 @@
     
 ## The Lumina® Desktop Environment
 
-- Innstall
+- Install:
 
 		sudo add-apt-repository ppa:samoilov-lex/lumina-desktop
 		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FA1A38EB
@@ -172,7 +172,7 @@
     
  ## Fluxbox
 
-- Innstall
+- Install:
 
 		sudo apt install fluxbox
 	
@@ -184,7 +184,7 @@
     
 ## Xmonad
 
-- Innstall
+- Install:
 
 		sudo apt-get install xmonad xmobar trayer
 		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FA1A38EB
@@ -201,7 +201,7 @@
     
 ## Subtle
 
-- Innstall
+- Install:
 
 		sudo apt install subtle
 		sudo apt update && sudo apt upgrade
@@ -215,9 +215,57 @@
 
     - [What kinds of desktop environments and shells are available? | Xmonad](https://askubuntu.com/a/871567/566421)
     
+## Awesome
+
+- Install:
+
+		sudo apt install awesome
+	
+- Uninstall:
+	
+		sudo apt remove --purge awesome 
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - [What kinds of desktop environments and shells are available? | Awesome](https://askubuntu.com/a/124649/566421)
+    
+## Enlightenment
+
+- Install:
+
+		sudo apt install e17
+	
+- Uninstall:
+	
+		sudo apt remove --purge e17
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - [What kinds of desktop environments and shells are available? | Enlightenment](https://askubuntu.com/a/65577/566421)
+    - [How do I install Enlightenment (E17)?](https://askubuntu.com/questions/16932/how-do-i-install-enlightenment-e17)
+    
+## i3wm
+
+- Install:
+
+		sudo apt install i3
+	
+- Uninstall:
+	
+		sudo apt-get remove --auto-remove --purge i3-wm
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+	
+- References:
+
+    - [What kinds of desktop environments and shells are available? | i3wm](https://askubuntu.com/a/413187/566421)
+    - [How To Uninstall i3-wm On Ubuntu 15.04](https://www.howtoinstall.co/en/ubuntu/utopic/i3-wm?action=remove)
+    
+    
 ## Pantheon - desn't work at all!
 
-- <s>Innstall:
+- <s>Install:
 
 		sudo add-apt-repository ppa:elementary-os/stable
 		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59
