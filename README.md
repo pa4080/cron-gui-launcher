@@ -46,8 +46,9 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 
 ## Supported/Tested Desktop Environments
 
-	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome Desktopt] [Gnome Classic | Flashbach (compis|metacity)] (Openbox)
-	$(pgrep gnome-session-b -n -U $UID) 	This return the same result as $(pgrep gnome-session -n -U $UID)
+	$(pgrep gnome-session -n -U $UID)	[Ubuntu Unity] [Ubuntu Gnome Desktopt] [Gnome Classic | Flashbach (compis|metacity)] (Openbox) [Budgie]
+	$(pgrep gnome-session-b -n -U $UID) 	This the full name of the proccess!
+	$(pgrep budgie-daemon -n -U $UID)	[Budgie] but $(pgrep gnome-session -n -U $UID) is better choice
 	$(pgrep xfce4-session -n -U $UID)	[Xubuntu] [XFCE4]
 	$(pgrep mate-session -n -U $UID)	[Ubuntu MATE] (Openbox)
 	$(pgrep lxsession -n -U $UID)		[Lubuntu] [Lubuntu Netbook] [LXDE]
@@ -63,8 +64,11 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	$(pgrep i3bar -n -U $UID)		[i3wm]
 	$(pgrep openbox -n -U $UID)		[Openbox] [GNOME/Openbox KDE/Openbox]
 	$(pgrep starttde -n -U $UID)		[Trinity]
-
-	
-	
+		
 ## Origins
 
+- [How to determine which is the current user's DE through CLI within SSH or Cron?](https://askubuntu.com/questions/956664/how-to-determine-which-is-the-current-users-de-through-cli-within-ssh-or-cron)
+- [Cron job to run python script at reboot does not work](https://askubuntu.com/questions/970771/cron-job-to-run-python-script-at-reboot-does-not-work)
+- [Adjust brightness with xrandr and cron job](https://askubuntu.com/questions/958228/adjust-brightness-with-xrandr-and-cron-job)
+- [Crontab and C program that should be executed into a terminal window](https://askubuntu.com/questions/955582/crontab-and-c-program-that-should-be-executed-into-a-terminal-window)
+- [Why does this cronjob not work? (Daily-Reddit-Wallpaper)](https://askubuntu.com/questions/911570/why-does-this-cronjob-not-work)
