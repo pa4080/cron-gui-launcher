@@ -335,11 +335,13 @@ The PPA's from the following links don't work [**1**](https://askubuntu.com/a/34
 
 - Install:
 
-		sudo apt install openbox openbox-menu openbox-gnome-session openbox-kde-session
+		sudo apt install openbox openbox-menu 
+		#sudo apt install openbox-gnome-session openbox-kde-session
 	
 - Uninstall:
 	
-		sudo apt-get remove --purge openbox openbox-menu openbox-gnome-session openbox-kde-session
+		sudo apt-get remove --purge openbox openbox-menu 
+		#sudo apt-get remove --purge openbox openbox-gnome-session openbox-kde-session
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
 		
 - References:
