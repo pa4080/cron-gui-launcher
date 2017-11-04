@@ -387,7 +387,7 @@ The PPA's from the following links don't work [**1**](https://askubuntu.com/a/34
 		sudo add-apt-repository ppa:budgie-remix/ppa
 		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F422D205
 		sudo apt update
-		sudo apt install ubuntu-budgie-desktop
+		sudo apt install budgie-desktop
 			
 - Uninstall:
 	
