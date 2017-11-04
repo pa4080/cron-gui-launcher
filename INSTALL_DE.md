@@ -362,6 +362,8 @@ The PPA's from the following links don't work [**1**](https://askubuntu.com/a/34
 		sudo apt update && sudo apt upgrade
 		sudo apt install kubuntu-default-settings-trinity kubuntu-desktop-trinity
 		
+		#sudo apt-get install kubuntu-default-settings-trinity kubuntu-desktop-trinity --fix-missing
+		
 	
 - Uninstall:
 	
@@ -372,4 +374,4 @@ The PPA's from the following links don't work [**1**](https://askubuntu.com/a/34
 - References:
 
     - [What kinds of desktop environments and shells are available? | Trinity](https://askubuntu.com/a/286547/566421)
-    - [Trinity Desktop Project Wiki : Ubuntu Trinity Repository Installation Instructions](https://wiki.trinitydesktop.org/UbuntuInstall)
+    - [Trinity Desktop Project Wiki : **Ubuntu Trinity Repository** Installation Instructions](https://wiki.trinitydesktop.org/UbuntuInstall)
