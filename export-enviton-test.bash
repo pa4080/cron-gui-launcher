@@ -15,3 +15,9 @@ for EnvVar in $EnvVarList; do
         echo "$EnvVar"
         export "$EnvVar"
 done
+
+# Execute the list of the input commands
+nohup "${2}" >/dev/null 2>&1 &
+
+exit 0
+
