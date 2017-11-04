@@ -348,3 +348,28 @@ The PPA's from the following links don't work [**1**](https://askubuntu.com/a/34
 
     - [What kinds of desktop environments and shells are available? | Openbox](https://askubuntu.com/a/730191/566421)
 
+## Trinity
+
+- Install:
+
+		echo | sudo tee -a /etc/apt/sources.list
+		echo "# Trinity - https://askubuntu.com/a/286547/566421" | sudo tee -a /etc/apt/sources.list
+		echo "deb http://mirror.ppa.trinitydesktop.org/trinity/trinity-r14.0.0/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
+		echo "deb-src http://mirror.ppa.trinitydesktop.org/trinity/trinity-r14.0.0/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
+		echo "deb http://mirror.ppa.trinitydesktop.org/trinity/trinity-builddeps-r14.0.0/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
+		echo "deb-src http://mirror.ppa.trinitydesktop.org/trinity/trinity-builddeps-r14.0.0/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list
+		
+		sudo apt update && sudo apt upgrade
+		sudo apt install kubuntu-default-settings-trinity kubuntu-desktop-trinity
+		
+	
+- Uninstall:
+	
+		sudo apt-get remove --purge kubuntu-default-settings-trinity kubuntu-desktop-trinity 
+		# Remove PPA from /etc/apt/sources.list
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
+		
+- References:
+
+    - [What kinds of desktop environments and shells are available? | Trinity](https://askubuntu.com/a/286547/566421)
+    - [Trinity Desktop Project Wiki : Ubuntu Trinity Repository Installation Instructions](https://wiki.trinitydesktop.org/UbuntuInstall)
