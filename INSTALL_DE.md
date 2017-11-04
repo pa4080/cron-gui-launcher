@@ -1,4 +1,38 @@
-# Desctop environments installation
+# Ubuntu Desktop Install / Reinstall / Recovery
+
+- Reinstall:
+
+		sudo apt-get update
+		sudo apt-get install --reinstall ubuntu-desktop
+		sudo apt-get install --reinstall unity
+		
+- Chande the display manager (greeter):
+
+		#sudo dpkg-reconfigure lightdm 		
+		#sudo dpkg-reconfigure gdm3
+		#sudo dpkg-reconfigure sddm
+
+- Restore Unity Greeter:
+
+		sudo apt remove --purge lightdm-gtk-greeter
+		sudo apt remove --purge sddm
+		sudo apt remove --purge sddm
+
+- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** (etc.) installation:
+
+		gsettings set org.gnome.desktop.background show-desktop-icons true
+
+- References:
+
+    - [**Restore Unity Greeter**](https://askubuntu.com/a/550404/566421)
+    - [**How do I change the wallpaper of the login screen?**](https://askubuntu.com/questions/64001/how-do-i-change-the-wallpaper-of-the-login-screen)
+    - [**How do I set the LightDM wallpaper in Ubuntu 14.04?**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
+    - [How can I make LightDM the default display manager?](https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager)
+    - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
+    - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
+    - [How to Choose & Switch Linux Display Managers](http://www.makeuseof.com/tag/choose-switch-linux-display-managers/) 
+    
+# Desctop Environments installation
 
 ## Gnome Shell | Ubuntu Gnome Desktop
 
@@ -22,7 +56,6 @@
     - [Using GNOME in ubuntu 16.04 LTS](https://askubuntu.com/questions/781559/using-gnome-in-ubuntu-16-04-lts)
     - [What kinds of desktop environments and shells are available? | GNOME Shell](https://askubuntu.com/a/65223/566421)
     
-
 ## XFCE4 | XUbuntu Desktop
 
 - Install:
@@ -63,8 +96,6 @@
 
     - [How to Install the Lightweight LXDE Desktop on Ubuntu](https://www.howtogeek.com/107368/how-to-install-the-lightweight-lxde-desktop-on-ubuntu/)
     
-    
-
 ## LXQt
 
 - Install:
@@ -136,6 +167,7 @@
 ## KDE Plasma | Kubuntu 
 
 - Install:
+
 		sudo apt-get install kubuntu-desktop
 		# Recovery
 		sudo dpkg -i --force-overwrite  /var/cache/apt/archives/kde-config-telepathy-accounts_4%3a15.12.3-0ubuntu1_amd64.deb
@@ -150,6 +182,34 @@
 
     - [Help installing kubuntu-desktop on Ubuntu 16.04](https://askubuntu.com/questions/764542/help-installing-kubuntu-desktop-on-ubuntu-16-04)
     - [Unable to install kubuntu-Desktop in ubuntu 16.04 Lts](https://askubuntu.com/questions/768786/unable-to-install-kubuntu-desktop-in-ubuntu-16-04-lts)
+
+       
+## Pantheon - desn't work at all!
+ <!--
+- Install:
+
+		sudo add-apt-repository ppa:elementary-os/stable
+		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59
+		sudo apt update && sudo apt dist-upgrade
+		sudo apt install elementary-desktop
+		sudo apt install elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
+		
+		sudo add-apt-repository ppa:elementary-os/daily && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
+		sudo add-apt-repository add-apt-repository ppa:elementary-os/os-patches && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
+		sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
+		#sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BFF792D0 && sudo apt update && sudo apt upgrade
+		sudo apt install elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
+	
+- Uninstall:
+	
+		sudo apt install ppa-purge 
+		sudo ppa-purge ppa:elementary-os/stable # etc..
+		sudo apt update && sudo apt autoremove && sudo apt autoclean</s>
+-->	
+- References:
+
+    - [How do you install Pantheon on Ubuntu 16.04?](https://askubuntu.com/questions/766673/how-do-you-install-pantheon-on-ubuntu-16-04)
+    - [How To Install Pantheon Desktop In Ubuntu](https://www.linuxhelp.com/how-to-install-pantheon-desktop-in-ubuntu/)
     
 ## The Lumina® Desktop Environment
 
@@ -262,65 +322,27 @@
     - [What kinds of desktop environments and shells are available? | i3wm](https://askubuntu.com/a/413187/566421)
     - [How To Uninstall i3-wm On Ubuntu 15.04](https://www.howtoinstall.co/en/ubuntu/utopic/i3-wm?action=remove)
     
-    
-## Pantheon - desn't work at all!
+## Qtile 
 
-- <s>Install:
+Available for 16.10+ - [here](http://docs.qtile.org/en/latest/manual/install/ubuntu.html).
 
-		sudo add-apt-repository ppa:elementary-os/stable
-		sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59
-		sudo apt update && sudo apt dist-upgrade
-		sudo apt install elementary-desktop
-		sudo apt install elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
-		
-		sudo add-apt-repository ppa:elementary-os/daily && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
-		sudo add-apt-repository add-apt-repository ppa:elementary-os/os-patches && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
-		sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E1F8A59 && sudo apt update && sudo apt upgrade
-		#sudo add-apt-repository ppa:elementary-os/testing && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BFF792D0 && sudo apt update && sudo apt upgrade
-		sudo apt install elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
-	</s>
-- <s>Uninstall:
+
+## Deepin DE 
+
+The PPA's from the following links don't work [**1**](https://askubuntu.com/a/342010/566421) and [**2**](https://www.youtube.com/watch?v=I3PTtM9VqcM).
+
+## Openbox
+
+- Install:
+
+		sudo apt install openbox openbox-menu openbox-gnome-session openbox-kde-session
 	
-		sudo apt install ppa-purge 
-		sudo ppa-purge ppa:elementary-os/stable # etc..
-		sudo apt update && sudo apt autoremove && sudo apt autoclean</s>
-	</s>
-- <s>References:
-
-    - [How do you install Pantheon on Ubuntu 16.04?](https://askubuntu.com/questions/766673/how-do-you-install-pantheon-on-ubuntu-16-04)
-    - [How To Install Pantheon Desktop In Ubuntu](https://www.linuxhelp.com/how-to-install-pantheon-desktop-in-ubuntu/)
-    </s>
-    
-# Ubuntu Desktop Install / Reinstall / Recovery
-
-- Reinstall:
-
-		sudo apt-get update
-		sudo apt-get install --reinstall ubuntu-desktop
-		sudo apt-get install --reinstall unity
+- Uninstall:
+	
+		sudo apt-get remove --purge openbox openbox-menu openbox-gnome-session openbox-kde-session
+		sudo apt update && sudo apt autoremove && sudo apt autoclean
 		
-- Chande the display manager (greeter):
-
-		#sudo dpkg-reconfigure lightdm 		
-		#sudo dpkg-reconfigure gdm3
-		#sudo dpkg-reconfigure sddm
-
-- Restore Unity Greeter:
-
-		sudo apt remove --purge lightdm-gtk-greeter
-		sudo apt remove --purge sddm
-		sudo apt remove --purge sddm
-
-- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** (etc.) installation:
-
-		gsettings set org.gnome.desktop.background show-desktop-icons true
-
 - References:
 
-    - [**Restore Unity Greeter**](https://askubuntu.com/a/550404/566421)
-    - [**How do I change the wallpaper of the login screen?**](https://askubuntu.com/questions/64001/how-do-i-change-the-wallpaper-of-the-login-screen)
-    - [**How do I set the LightDM wallpaper in Ubuntu 14.04?**](https://askubuntu.com/questions/449677/how-do-i-set-the-lightdm-wallpaper-in-ubuntu-14-04)
-    - [How can I make LightDM the default display manager?](https://askubuntu.com/questions/58023/how-can-i-make-lightdm-the-default-display-manager)
-    - https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely
-    - https://askubuntu.com/questions/95458/how-do-i-reinstall-unity
-    - [How to Choose & Switch Linux Display Managers](http://www.makeuseof.com/tag/choose-switch-linux-display-managers/) 
+    - [What kinds of desktop environments and shells are available? | Openbox](https://askubuntu.com/a/730191/566421)
+
