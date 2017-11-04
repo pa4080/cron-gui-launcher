@@ -57,6 +57,9 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 	$(pgrep fluxbox -n -U $UID)		[Fluxbox] (The Lumina® Desktop Environment)
 	$(pgrep xmonad -n -U $UID)		[Xmonad]
 	$(pgrep subtle -n -U $UID)		[Subtle]
+	$(pgrep awesome -n -U $UID)		[Awesome]
+	$(pgrep enlightenment -n -U $UID)	[Enlightenment]
+	$(pgrep i3bar -n -U $UID)		[i3wm]
 
 	
 	
