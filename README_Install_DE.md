@@ -31,6 +31,8 @@
     - [How to purge SDDM/Plasma completely](https://askubuntu.com/questions/715108/how-to-purge-sddm-plasma-completely)
     - [How do I reinstall Unity?](https://askubuntu.com/questions/95458/how-do-i-reinstall-unity)
     - [How to Choose & Switch Linux Display Managers](http://www.makeuseof.com/tag/choose-switch-linux-display-managers/) 
+    - [How Changing the Splash Screen Has Changed](http://www.makeuseof.com/tag/customize-boot-splash-screen-logo-linux/)
+    - [Ubuntu Wiki: LightDM](https://wiki.ubuntu.com/LightDM) | [How to change the LightDM theme/greeter?](https://askubuntu.com/questions/75755/how-to-change-the-lightdm-theme-greeter)
     
 # Desctop Environments installation
 
