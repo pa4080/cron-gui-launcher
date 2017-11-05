@@ -18,7 +18,7 @@
 		sudo apt remove --purge gdm
 		sudo apt remove --purge sddm
 
-- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** (etc.) installation:
+- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** (etc.) installation (without `sudo` important):
 
 		gsettings set org.gnome.desktop.background show-desktop-icons true
 
