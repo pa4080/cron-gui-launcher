@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Simple script to check if the appropriate process is choosen. Use the script through a remote SSH connection to a machine with GUI.
+# Example that will launch gnome-calculator fron the SSH session into the GUI session: 
+# ./export-enviton-test.bash gnome-session-b gnome-calculator
+
 DE_SESSION="${1}"
 
 # Check whether the user is logged in Mate
@@ -18,6 +22,3 @@ done
 
 # Execute the list of the input commands
 nohup "${2}" >/dev/null 2>&1 &
-
-exit 0
-
