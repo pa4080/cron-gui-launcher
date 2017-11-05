@@ -6,16 +6,16 @@
 		sudo apt-get install --reinstall ubuntu-desktop
 		sudo apt-get install --reinstall unity
 		
-- Chande the display manager (greeter):
+- Change the display manager (greeter):
 
-		#sudo dpkg-reconfigure lightdm 		
-		#sudo dpkg-reconfigure gdm3
-		#sudo dpkg-reconfigure sddm
+		sudo dpkg-reconfigure lightdm 		
+		sudo dpkg-reconfigure gdm3
+		sudo dpkg-reconfigure sddm
 
 - Restore Unity Greeter:
 
 		sudo apt remove --purge lightdm-gtk-greeter
-		sudo apt remove --purge sddm
+		sudo apt remove --purge gdm
 		sudo apt remove --purge sddm
 
 - [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** (etc.) installation:
