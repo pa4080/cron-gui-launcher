@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#This is the initial version. It works in almost all cases, but it fail with Cron's @reboot jobs.
+# This is the initial version. It works in almost all cases, but it fail with Cron's @reboot jobs.
 
 # [0.] Create log file. Use "$2" to leave a description within the name.
 if [ -z "${2+x}" ]; then DESCRIPTION=""; else DESCRIPTION="-$2"; fi
