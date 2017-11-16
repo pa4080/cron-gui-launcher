@@ -33,6 +33,7 @@
     - [How to Choose & Switch Linux Display Managers](http://www.makeuseof.com/tag/choose-switch-linux-display-managers/) 
     - [How Changing the Splash Screen Has Changed](http://www.makeuseof.com/tag/customize-boot-splash-screen-logo-linux/)
     - [Ubuntu Wiki: LightDM](https://wiki.ubuntu.com/LightDM) | [How to change the LightDM theme/greeter?](https://askubuntu.com/questions/75755/how-to-change-the-lightdm-theme-greeter)
+    - [Customize the Ubuntu 16.04 Login Screen](http://zacharykeeton.com/customize-ubuntu-login-screen/)
     
 # Desctop Environments installation
 
