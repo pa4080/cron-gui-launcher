@@ -1,4 +1,4 @@
-# Ubuntu Desktop Install / Reinstall / Recovery
+# Ubuntu Desktop Install [ Reinstall | Recovery ]
 
 - Reinstall:
 
