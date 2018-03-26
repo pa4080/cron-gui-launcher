@@ -68,7 +68,7 @@ Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
 ## Origins
 
 - [How to launch any GUI related application from crontab in Ubuntu 16.04, 17.10 and other Ubuntu distros with Gnome](https://askubuntu.com/questions/978382/how-can-i-show-notify-send-messages-triggered-by-crontab/978413#978413)
-- [Cannot change desktop background with crontab](https://askubuntu.com/a/1019449/566421)
+- [Cannot change desktop background with crontab on Lubuntu](https://askubuntu.com/a/1019449/566421)
 - [How do I split a “/proc/*/environ” file in separate lines?](https://askubuntu.com/questions/978711/how-do-i-split-a-proc-environ-file-in-separate-lines)
 - [How to determine which is the current user's DE through CLI within SSH or Cron?](https://askubuntu.com/questions/956664/how-to-determine-which-is-the-current-users-de-through-cli-within-ssh-or-cron)
 - [Cron job to run python script at reboot does not work](https://askubuntu.com/questions/970771/cron-job-to-run-python-script-at-reboot-does-not-work)
