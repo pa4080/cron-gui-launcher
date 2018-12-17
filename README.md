@@ -2,27 +2,44 @@
 
 **Cron-GIU-Launcher** is a simple Bash script, that is able to launch a **GUI** application as **Cron** job within **Ubuntu**. The script is designed to work with the user's environment, respectively the Cron jobs shall be set within user's `crontab` file. It codld be modified to work with `cron.d`, but in some cases this will cause mishmash with the file permissions within `/proc`, so it is not good idea. 
 
-# How to use it
-
 ## Input Parameters
 
 - `$1` - list of commands to be executed. The individual commands need to be separated with `␣&&␣` - note the spaces.
 - `$2` - short description of the job that will be appended to the log file name. Read the the section *How it works?*
 - `$3` - time-out in minutes, when the user is not logged in. While this variable is empty there is no time-out. If the job is on `@reboot` this variable should be empty. This option is usefull for regular Cron jobs, for example: If you have a job that is executed every 15 minutes and your user is logout (or locked) for 2 hours there will have 8 pending jobs, which will be executed when the user is logged on.
 
-## How to use Cron-GIU-Launcher
+## Installation
 
-Befor crating a Cron job that uses Cron-GIU-Launcher with Cron
+Clone the repository, by using one of the commands:
 
-## How to install
+````bash
+git clone git@github.com:pa4080/cron-gui-launcher.git
+git clone https://github.com/pa4080/cron-gui-launcher.git
+````
+
+Examine and execute the file `install.sh`, by default it will create a copy of `cron-gui-launcher.bash` to `~/bin` and the new executable wll be named `cron-gui-launcher`.
+
+## Usage
+
+Before crating a Cron job that uses Cron-GIU-Launcher with you can test how it works from the command line. For this purpose you can open a TTY (Ctrl+Alt+F1 on Ubuntu 16.04), and try to run something in your Desktop session from that point. Or establish SHH connection to your machine from a remote host (or even you can use `ssh localhost`), and try to run something in your Desktop session from that point. The syntax is identical as the one that should be used in the Cron job. Example:
+
+````bash
+cron-gui-launcher 'gnome-calculator' 'a short description'
+````
+
+An example Cron job:
+
+````bash
+@hourly $HOME/bin/cron-gui-launcher 'gnome-calculator' 'a short description'
+````
 
 ## How it works
 
-0. Note about the logging: The script will create a log file located in `/tmp`, which name shall be 
+0. Note about the logging: The script will create a log file located in `/tmp`, which name will be:
 
-	````bash
-	$USER-cron-gui-launcher-$DESCRIPTION.log
-	````
+````bash
+$USER-cron-gui-launcher-$DESCRIPTION.log
+````
 
      - Where as `$DESCRIPTION` will be assigned the value of the input variable `$2`, thus if you wish you can make some job's log file unique.
 

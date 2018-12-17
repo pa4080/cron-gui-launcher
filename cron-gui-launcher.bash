@@ -1,16 +1,17 @@
 #!/bin/bash
 
 # [0.] Create log file. Use "$2" to leave a description within the name.
-if [ -z "${2+x}" ]; then DESCRIPTION=""; else DESCRIPTION="-$2"; fi
+if [[ -z "${2+x}" ]]; then DESCRIPTION=""; else DESCRIPTION="-${2}"; fi
 LOG="/tmp/$USER-cron-gui-launcher$DESCRIPTION.log"
 printf '\n%s\n\n\nDetected environment variables:\n\n' "$(date +%Y-%m-%d_%H:%M:%S)" > "$LOG"
 
 # [1.] Get the value of the $DISPLAY variable for the current user. Unset it just in case this is a `ssh -X` connection
 unset DISPLAY; timeout=0
-while [ -z "$DISPLAY" ]; do
+while [[ -z "$DISPLAY" ]]; do
         DISPLAY=$(w "$USER" | awk 'NF > 7 && $2 ~ /tty[0-9]+/ {print $3; exit}' 2>/dev/null)
-        if [ "$DISPLAY" == "" ]; then sleep 60; else export DISPLAY=$DISPLAY; fi
-        ((timeout++)); if [ "$timeout" -eq "$3" ]; then printf "Timeout: %s\n" "$timeout" >> "$LOG"; exit 1; fi
+        if [[ "$DISPLAY" == "" ]]; then sleep 60; else export DISPLAY=$DISPLAY; fi
+        ((timeout++))
+        if [[ ! -z "${3+x}" ]] && [[ "$timeout" -eq "$3" ]]; then printf "Timeout: %s\n" "$timeout" >> "$LOG"; exit 1; fi
 done; printf 'DISPLAY=%s\n' "$DISPLAY" >> "$LOG"
 
 # [->2.] Get certain envvar value ("$1") from any "/proc/$ProcessNumber/environ" file ("$2")
@@ -46,20 +47,20 @@ XDG_CURRENT_DESKTOP=$(echo -e "${XDG_CURRENT_DESKTOP[@]}" | get_frequent)
 declare -l DE && export DE="${XDG_CURRENT_DESKTOP/:*/}" && printf 'XDG_CURRENT_DESKTOP=%s\nDE=%s\n' "$XDG_CURRENT_DESKTOP" "$DE" >> "$LOG"
 
 # [5.] Export the Current-Desktop-Session Environment Variables:
-if   [ "$DE" = "unity" ];               then export_environ "$(pgrep gnome-session -n -U $UID)"
-elif [ "$DE" = "gnome" ];               then export_environ "$(pgrep gnome-session -n -U $UID)"
-elif [ "$DE" = "gnome-classic" ];       then export_environ "$(pgrep gnome-session -n -U $UID)"
-elif [ "$DE" = "kde" ];                 then export_environ "$(pgrep startkde -n -U $UID)"
-elif [ "$DE" = "mate" ];                then export_environ "$(pgrep mate-session  -n -U $UID)"
-elif [ "$DE" = "lxde" ];                then export_environ "$(pgrep lxsession -n -U $UID)"
-elif [ "$DE" = "xfce" ];                then export_environ "$(pgrep xfce4-session -n -U $UID)"
-elif [ "$DE" = "xfce4" ];               then export_environ "$(pgrep xfce4-session -n -U $UID)"
-elif [ "$DE" = "x-cinnamon" ];          then export_environ "$(pgrep cinnamon-session -n -U $UID)"
+if   [[ "$DE" == "unity" ]];               then export_environ "$(pgrep gnome-session -n -U $UID)"
+elif [[ "$DE" == "gnome" ]];               then export_environ "$(pgrep gnome-session -n -U $UID)"
+elif [[ "$DE" == "gnome-classic" ]];       then export_environ "$(pgrep gnome-session -n -U $UID)"
+elif [[ "$DE" == "kde" ]];                 then export_environ "$(pgrep startkde -n -U $UID)"
+elif [[ "$DE" == "mate" ]];                then export_environ "$(pgrep mate-session  -n -U $UID)"
+elif [[ "$DE" == "lxde" ]];                then export_environ "$(pgrep lxsession -n -U $UID)"
+elif [[ "$DE" == "xfce" ]];                then export_environ "$(pgrep xfce4-session -n -U $UID)"
+elif [[ "$DE" == "xfce4" ]];               then export_environ "$(pgrep xfce4-session -n -U $UID)"
+elif [[ "$DE" == "x-cinnamon" ]];          then export_environ "$(pgrep cinnamon-session -n -U $UID)"
 else printf 'Your current Desktop Environment is not supported!\n Please contribute to https://github.com/pa4080/cron-gui-launcher\n' >> "$LOG"
 fi
 
 # [6.] Execute the list of the input commands
-if [ -z "${1+x}" ]; then
+if [[ -z "${1+x}" ]]; then
 	printf '\n\nThere is not any input command!\n'
 else
 	execute_input_commands "$1"
