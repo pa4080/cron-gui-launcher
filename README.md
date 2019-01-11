@@ -84,7 +84,7 @@ $USER-cron-gui-launcher-$DESCRIPTION.log
 	$(pgrep openbox -n -U $UID)		[Openbox] [GNOME/Openbox KDE/Openbox]
 	$(pgrep starttde -n -U $UID)		[Trinity]
 		
-## Origins
+## Origins and other applications of the approach
 
 - [How to launch any GUI related application from crontab in Ubuntu 16.04, 17.10 and other Ubuntu distros with Gnome](https://askubuntu.com/questions/978382/how-can-i-show-notify-send-messages-triggered-by-crontab/978413#978413)
 - [Cannot change desktop background with crontab on Lubuntu](https://askubuntu.com/a/1019449/566421)
@@ -94,3 +94,4 @@ $USER-cron-gui-launcher-$DESCRIPTION.log
 - [Adjust brightness with xrandr and cron job](https://askubuntu.com/questions/958228/adjust-brightness-with-xrandr-and-cron-job)
 - [Crontab and C program that should be executed into a terminal window](https://askubuntu.com/questions/955582/crontab-and-c-program-that-should-be-executed-into-a-terminal-window)
 - [Why does this cronjob not work? (Daily-Reddit-Wallpaper)](https://askubuntu.com/questions/911570/why-does-this-cronjob-not-work)
+- [Is this behaviour of VLC normal?](https://askubuntu.com/a/1107441/566421)
