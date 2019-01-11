@@ -94,4 +94,5 @@ $USER-cron-gui-launcher-$DESCRIPTION.log
 - [Adjust brightness with xrandr and cron job](https://askubuntu.com/questions/958228/adjust-brightness-with-xrandr-and-cron-job)
 - [Crontab and C program that should be executed into a terminal window](https://askubuntu.com/questions/955582/crontab-and-c-program-that-should-be-executed-into-a-terminal-window)
 - [Why does this cronjob not work? (Daily-Reddit-Wallpaper)](https://askubuntu.com/questions/911570/why-does-this-cronjob-not-work)
+- [How to run script (.sh) files in a new terminal after connecting to Ubuntu 16.04 server via ssh?](https://askubuntu.com/a/1040852/566421)
 - [Is this behaviour of VLC normal?](https://askubuntu.com/a/1107441/566421)
