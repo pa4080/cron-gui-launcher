@@ -37,9 +37,9 @@ An example Cron job:
 
 0. Note about the logging: The script will create a log file located in `/tmp`, which name will be:
 
-````bash
-$USER-cron-gui-launcher-$DESCRIPTION.log
-````
+	````bash
+	$USER-cron-gui-launcher-$DESCRIPTION.log
+	````
 
    - Where as `$DESCRIPTION` will be assigned the value of the input variable `$2`, thus if you wish you can make some job's log file unique.
 
