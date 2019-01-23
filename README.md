@@ -41,7 +41,7 @@ An example Cron job:
 $USER-cron-gui-launcher-$DESCRIPTION.log
 ````
 
-     - Where as `$DESCRIPTION` will be assigned the value of the input variable `$2`, thus if you wish you can make some job's log file unique.
+   - Where as `$DESCRIPTION` will be assigned the value of the input variable `$2`, thus if you wish you can make some job's log file unique.
 
 1. Initially the script attempts to get the current user's `$DISPLAY` number. For this purpose it uses the <a href="https://askubuntu.com/a/744751/566421">following</a> method:
 
