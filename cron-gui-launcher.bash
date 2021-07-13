@@ -49,8 +49,14 @@ get_frequent(){
 # [->5.] Get the conten ot the current-desktop-session's environment file as an array, then export each line
 export_environ(){
         printf '\n\nExported environment (source file /proc/%s/environ):\n\n' "$1" >> "$LOG"
+
         EnvVarList=$(cat -e "/proc/$1/environ" 2>/dev/null | sed 's/\^@/\n/g' | tr -d '\0')
-        for EnvVar in $EnvVarList; do echo "export $EnvVar" >> "$LOG"; export "$EnvVar"; done
+
+        for EnvVar in $EnvVarList
+        do
+                echo "export $EnvVar" >> "$LOG"
+                export "$EnvVar" 2>/dev/null
+        done
 }
 
 # [->6.] Fragmentation of the list of the input commands (input variable "$1"), use ` && ` as separator, then execute each one
@@ -59,7 +65,10 @@ execute_input_commands(){
 }
 
 # [2.] Get the value of $XDG_CURRENT_DESKTOP from each "/proc/$ProcessNumber/environ" file - create an array.
-for PN in $(pgrep -U "$UID"); do XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT_DESKTOP" "$PN"; echo " "); done
+for PN in $(pgrep -U "$UID")
+do
+        XDG_CURRENT_DESKTOP+=$(get_environ "XDG_CURRENT_DESKTOP" "$PN"; echo " ")
+done
 
 # [3.] Get the name of the current Desktop Environment
 XDG_CURRENT_DESKTOP=$(echo -e "${XDG_CURRENT_DESKTOP[@]}" | get_frequent)
