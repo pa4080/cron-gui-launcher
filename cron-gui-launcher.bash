@@ -86,7 +86,7 @@ elif [[ "$DE" == "lxde" ]];                then export_environ "$(pgrep lxsessio
 elif [[ "$DE" == "xfce" ]];                then export_environ "$(pgrep xfce4-session -n -U $UID)"
 elif [[ "$DE" == "xfce4" ]];               then export_environ "$(pgrep xfce4-session -n -U $UID)"
 elif [[ "$DE" == "x-cinnamon" ]];          then export_environ "$(pgrep cinnamon-session -n -U $UID)"
-else printf 'Your current Desktop Environment is not supported!\n Please contribute to https://github.com/pa4080/cron-gui-launcher\n' >> "$LOG"
+else printf 'Your current Desktop Environment is not supported!\n Please contribute to https://github.com/metalevel-tech/cron-gui-launcher\n' >> "$LOG"
 fi
 
 # [6.] Execute the list of the input commands

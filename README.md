@@ -13,8 +13,8 @@
 Clone the repository, by using one of the commands:
 
 ````bash
-git clone git@github.com:pa4080/cron-gui-launcher.git
-git clone https://github.com/pa4080/cron-gui-launcher.git
+git clone git@github.com:metalevel-tech/cron-gui-launcher.git
+git clone https://github.com/metalevel-tech/cron-gui-launcher.git
 ````
 
 Examine and execute the file `install.sh`, by default it will create a copy of `cron-gui-launcher.bash` to `~/bin` and the new executable wll be named `cron-gui-launcher`.
