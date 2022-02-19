@@ -96,3 +96,34 @@ An example Cron job:
 - [Why does this cronjob not work? (Daily-Reddit-Wallpaper)](https://askubuntu.com/questions/911570/why-does-this-cronjob-not-work)
 - [How to run script (.sh) files in a new terminal after connecting to Ubuntu 16.04 server via ssh?](https://askubuntu.com/a/1040852/566421)
 - [Is this behaviour of VLC normal?](https://askubuntu.com/a/1107441/566421)
+
+## The most advanced version
+The most advanced version of the sctipt is developed as an answer of the question [How can I show notify-send messages triggered by crontab?](https://askubuntu.com/a/978413/566421) at AskUbuntu.com
+
+It is not implemented within the repository itself.
+
+```bash
+#!/bin/bash -e
+
+# NAME: gui-launcher
+
+# Check whether the user is logged-in
+while [ -z "$(pgrep gnome-session -n -U $UID)" ]; do sleep 3; done
+
+# Export the current desktop session environment variables
+export $(xargs -0 -a "/proc/$(pgrep gnome-session -n -U $UID)/environ")
+
+# Execute the input command
+nohup "$@" >/dev/null 2>&1 &
+
+exit 0
+```
+
+* For other Desktop Environments change `gnome-session` in this part `$(pgrep gnome-session -n -U $UID)` with the name of the process of the DE in use, for example `mate-session`. A list of the most Ubuntu DE is [presented here](https://github.com/metalevel-tech/cron-gui-launcher#supportedtested-desktop-environments). Lubuntu implementation of the same script - [here](https://askubuntu.com/a/1019449/566421). The script could be used to launch GUI app from TTY or SSH session in the current user's Desktop session.
+* Make the file executable: `chmod +x gui-launcher`.
+* The script will work until the user is logged-in, including a locked screen.
+* **Please don't modify and run the script as root. It could be harmful for the system!**
+
+Here is how it works on Ubuntu 17.10 on Wayland:
+
+[![enter image description here](https://i.stack.imgur.com/eyxYi.gif)](https://i.stack.imgur.com/eyxYi.gif)
