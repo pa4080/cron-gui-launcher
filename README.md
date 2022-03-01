@@ -4,6 +4,11 @@
 
 Here is [**a Demo at YouTube**](https://youtube.com/playlist?list=PLO24trCW6Y8evkphLwjzU_AdrznkarVS9).
 
+[![Ubuntu: CRON GUI Launcher Demo - SSH](https://img.youtube.com/vi/xN2iW7Q0vTo/mqdefault.jpg)](https://youtu.be/xN2iW7Q0vTo "Click to play Video 1 on Youtube.com")
+[![Ubuntu: CRON GUI Launcher Demo - SSH - XRANDR](https://img.youtube.com/vi/biC4-vQk0qs/mqdefault.jpg)](https://youtu.be/biC4-vQk0qs "Click to play Video 3 on Youtube.com")
+[![Ubuntu: CRON GUI Launcher Demo](https://img.youtube.com/vi/xShzFOrZKO8/mqdefault.jpg)](https://youtu.be/xShzFOrZKO8 "Click to play Video 3 on Youtube.com")
+<!-- https://www.sitepoint.com/youtube-video-thumbnail-urls/ -->
+
 ## Input Parameters
 
 - `$1` - list of commands to be executed. The individual commands need to be separated with `␣&&␣` - note the spaces.
@@ -100,7 +105,7 @@ Here is how it works at Ubuntu 17.10 with Wayland.
 
 [![gui-launcher-sh-at-ubuntu-with-wayland](demo-images/gui-launcher-sh-at-ubuntu-with-wayland.gif)](demo-images/gui-launcher-sh-at-ubuntu-with-wayland.gif)
 
-**Note: the original script is capable to execute much complex commands as <s>`xdg-screensaver lock` or</s> `gnome-session-quit --no-prompt` while this simplified version fails, but it is useful when you want to just start an application.**
+**Note: the original script is capable to execute much complex commands as `gnome-session-quit --no-prompt` (<s>or `xdg-screensaver lock`</s> *it does not need DISPLAY*) while this simplified version fails, but it is useful when you want to just start an application.**
 
 # Log-in a User into a Desktop Session from within SSH session
 
