@@ -4,9 +4,9 @@
 
 Here is [**a Demo at YouTube**](https://youtube.com/playlist?list=PLO24trCW6Y8evkphLwjzU_AdrznkarVS9).
 
-[![Ubuntu: CRON GUI Launcher Demo - SSH](https://img.youtube.com/vi/xN2iW7Q0vTo/mqdefault.jpg)](https://youtu.be/xN2iW7Q0vTo "Click to play Video 1 on Youtube.com")
-[![Ubuntu: CRON GUI Launcher Demo - SSH - XRANDR](https://img.youtube.com/vi/biC4-vQk0qs/mqdefault.jpg)](https://youtu.be/biC4-vQk0qs "Click to play Video 3 on Youtube.com")
-[![Ubuntu: CRON GUI Launcher Demo](https://img.youtube.com/vi/xShzFOrZKO8/mqdefault.jpg)](https://youtu.be/xShzFOrZKO8 "Click to play Video 3 on Youtube.com")
+[![Ubuntu: CRON GUI Launcher Demo - SSH](https://img.youtube.com/vi/xN2iW7Q0vTo/default.jpg)](https://youtu.be/xN2iW7Q0vTo "Click to play Video 1 on Youtube.com")
+[![Ubuntu: CRON GUI Launcher Demo - SSH - XRANDR](https://img.youtube.com/vi/biC4-vQk0qs/default.jpg)](https://youtu.be/biC4-vQk0qs "Click to play Video 3 on Youtube.com")
+[![Ubuntu: CRON GUI Launcher Demo](https://img.youtube.com/vi/xShzFOrZKO8/default.jpg)](https://youtu.be/xShzFOrZKO8 "Click to play Video 3 on Youtube.com")
 <!-- https://www.sitepoint.com/youtube-video-thumbnail-urls/ -->
 
 ## Input Parameters
