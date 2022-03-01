@@ -1,8 +1,15 @@
 #!/bin/bash
 
-# Simple script to check if the appropriate process is choosen. Use the script through a remote SSH connection to a machine with GUI.
-# Example that will launch gnome-calculator fron the SSH session into the GUI session: 
-# ./export-enviton-test.bash gnome-session-b gnome-calculator
+# @author       Spas Z. Spasov <spas.z.spasov@gmail.com>
+# @license      https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3
+# @home         https://github.com/metalevel-tech/cron-gui-launcher
+#
+# @name         export-enviton-test.sh
+
+# Simple script to check if the appropriate process is choosen.
+# Use the script through a remote SSH connection to a machine with GUI.
+# Example that will launch gnome-calculator from a SSH session into the GUI session: 
+# $ ./export-environ-test.sh gnome-session-b gnome-calculator
 
 DE_SESSION="${1}"
 

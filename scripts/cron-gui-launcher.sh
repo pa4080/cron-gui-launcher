@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# @author       Spas Z. Spasov <spas.z.spasov@gmail.com>
+# @license      https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3
+# @home         https://github.com/metalevel-tech/cron-gui-launcher
+#
+# @name         cron-gui-launcher.sh
+
 # [0.] Create log file. Use "$2" to leave a description within the name.
 if [[ -z "${2+x}" ]]; then DESCRIPTION=""; else DESCRIPTION="$2"; fi
 LOG="/tmp/$USER-cron-gui-launcher-${DESCRIPTION}.log"
@@ -96,4 +102,5 @@ else
         execute_input_commands "$1"
 fi
 
-# Debug cat "$LOG"
+# Debug
+#cat "$LOG"

@@ -18,7 +18,7 @@
 		sudo apt remove --purge gdm
 		sudo apt remove --purge sddm
 
-- [Show the desctop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eanable the right lick on the desktop **after XFCE** (etc.) installation (without `sudo` important):
+- [Show the desktop icons and the background image](https://ubuntuforums.org/showthread.php?t=2246432), and eatable the right click on the desktop **after XFCE** (etc.) installation (without `sudo` important):
 
 		gsettings set org.gnome.desktop.background show-desktop-icons true
 
@@ -35,7 +35,7 @@
     - [Ubuntu Wiki: LightDM](https://wiki.ubuntu.com/LightDM) | [How to change the LightDM theme/greeter?](https://askubuntu.com/questions/75755/how-to-change-the-lightdm-theme-greeter)
     - [Customize the Ubuntu 16.04 Login Screen](http://zacharykeeton.com/customize-ubuntu-login-screen/)
     
-# Desctop Environments installation
+# Desktop Environments installation
 
 ## Gnome Shell | Ubuntu Gnome Desktop
 
@@ -76,7 +76,7 @@
 
     - [How can I install XFCE along side Unity?](https://askubuntu.com/questions/223536/how-can-i-install-xfce-along-side-unity)
     - [How to I change from Ubuntu to Xubuntu?](https://askubuntu.com/questions/65861/how-to-i-change-from-ubuntu-to-xubuntu)
-    - [Desctop Icons Recovery 1](https://askubuntu.com/questions/451847/desktop-icons-not-showing-up-in-xubuntu-and-i-cant-right-click-on-the-desktop) | [Desctop Icons Recovery 2](https://bbs.archlinux.org/viewtopic.php?id=127138) 
+    - [Desktop Icons Recovery 1](https://askubuntu.com/questions/451847/desktop-icons-not-showing-up-in-xubuntu-and-i-cant-right-click-on-the-desktop) | [Desktop Icons Recovery 2](https://bbs.archlinux.org/viewtopic.php?id=127138) 
 
 ## LXDE | Lubuntu Desktop (Lubuntu Netbook)
 
@@ -106,7 +106,7 @@
 		sudo apt update
 		sudo apt install lxqt lxqt-session* openbox
 	
-	It is possible, when you log into LXQt, to be asked to set default session mannager - choose `open` (`/usr/bin/openbox`). Recovery from wrong sesion manager: establish `ssh -X` connection, run `lxqt-config-session` and change the session manager.
+	It is possible, when you log into LXQt, to be asked to set default session manager - choose `open` (`/usr/bin/openbox`). Recovery from wrong session manager: establish `ssh -X` connection, run `lxqt-config-session` and change the session manager.
 		
 - Uninstall:
 
@@ -136,7 +136,7 @@
 		sudo apt update && sudo apt autoremove && sudo apt autoclean
 
 
-- Alternativelly Install Ubuntu Mate Desktop:
+- Alternatively Install Ubuntu Mate Desktop:
 
 		sudo apt install ubuntu-mate-desktop
 		sudo apt install ubuntu-mate-core ubuntu-mate-desktop
@@ -187,7 +187,7 @@
     - [Unable to install kubuntu-Desktop in ubuntu 16.04 Lts](https://askubuntu.com/questions/768786/unable-to-install-kubuntu-desktop-in-ubuntu-16-04-lts)
 
        
-## Pantheon - desn't work at all!
+## Pantheon - doesn't work at all!
  <!--
 - Install:
 
