@@ -1,6 +1,6 @@
 # Cron-GIU-Launcher
 
-[**cron-gui-launcher.sh**](scripts/cron-gui-launcher.sh) is a simple Bash script, that is able to launch a **GUI** applications as **Cron** jobs or from within a **SSH** session. The script is designed to work with the user's environment, respectively the Cron jobs shall be set within the user's `crontab`. It can be modified to work with `cron.d`, but in some cases this will cause mishmash with the file permissions within `/proc`, so it is not good idea. **Please don't modify and run the script as root. It could be harmful for the system!**
+[**cron-gui-launcher.sh**](scripts/cron-gui-launcher.sh) is a Bash script, that is able to launch a **GUI** applications as **Cron** jobs or from a **SSH** session. The script is designed to work with the user's environment, respectively the Cron jobs shall be set within the user's `crontab`. It can be modified to work with `cron.d`, but in some cases this will cause mishmash with the file permissions within `/proc`, so it is not good idea. **Please don't modify and run the script as root. It could be harmful for the system!**
 
 Here is [**a Demo at YouTube**](https://youtube.com/playlist?list=PLO24trCW6Y8evkphLwjzU_AdrznkarVS9).
 
@@ -67,24 +67,24 @@ An example Cron job:
 ## Supported/Tested Desktop Environments
 
 ```bash
-$(pgrep gnome-session -n -U $UID)		# [Ubuntu Unity] [Ubuntu Gnome Desktop] [Gnome Classic | Flashbach (compis|metacity)] (Openbox) [Budgie]
+$(pgrep gnome-session -n -U $UID)	# [Ubuntu Unity] [Ubuntu Gnome Desktop] [Gnome Classic | Flashbach (compis|metacity)] (Openbox) [Budgie]
 $(pgrep gnome-session-b -n -U $UID) 	# - This the full name of the process!
-$(pgrep budgie-daemon -n -U $UID)		# [Budgie] but $(pgrep gnome-session -n -U $UID) is better choice
-$(pgrep xfce4-session -n -U $UID)		# [Xubuntu] [XFCE4]
-$(pgrep mate-session -n -U $UID)		# [Ubuntu MATE] (Openbox)
-$(pgrep lxsession -n -U $UID)			# [Lubuntu] [Lubuntu Netbook] [LXDE]
-$(pgrep lxqt-session -n -U $UID)		# [LXQt]
+$(pgrep budgie-daemon -n -U $UID)	# [Budgie] but $(pgrep gnome-session -n -U $UID) is better choice
+$(pgrep xfce4-session -n -U $UID)	# [Xubuntu] [XFCE4]
+$(pgrep mate-session -n -U $UID)	# [Ubuntu MATE] (Openbox)
+$(pgrep lxsession -n -U $UID)		# [Lubuntu] [Lubuntu Netbook] [LXDE]
+$(pgrep lxqt-session -n -U $UID)	# [LXQt]
 $(pgrep cinnamon-session -n -U $UID)	# [Cinnamon] [Cinnamon2d] [Cinnamon (Software Rendering)]
-$(pgrep startkde -n -U $UID)			# [Kubuntu] [KDE Plasma] (Openbox)
-$(pgrep start-lumina-de -n -U $UID)		# [Lumina]  (The Lumina® Desktop Environment)
-$(pgrep fluxbox -n -U $UID)				# [Fluxbox] (The Lumina® Desktop Environment)
-$(pgrep xmonad -n -U $UID)				# [Xmonad]
-$(pgrep subtle -n -U $UID)				# [Subtle]
-$(pgrep awesome -n -U $UID)				# [Awesome]
-$(pgrep enlightenment -n -U $UID)		# [Enlightenment]
-$(pgrep i3bar -n -U $UID)				# [i3wm]
-$(pgrep openbox -n -U $UID)				# [Openbox] [GNOME/Openbox KDE/Openbox]
-$(pgrep starttde -n -U $UID)			# [Trinity]
+$(pgrep startkde -n -U $UID)		# [Kubuntu] [KDE Plasma] (Openbox)
+$(pgrep start-lumina-de -n -U $UID)	# [Lumina]  (The Lumina® Desktop Environment)
+$(pgrep fluxbox -n -U $UID)		# [Fluxbox] (The Lumina® Desktop Environment)
+$(pgrep xmonad -n -U $UID)		# [Xmonad]
+$(pgrep subtle -n -U $UID)		# [Subtle]
+$(pgrep awesome -n -U $UID)		# [Awesome]
+$(pgrep enlightenment -n -U $UID)	# [Enlightenment]
+$(pgrep i3bar -n -U $UID)		# [i3wm]
+$(pgrep openbox -n -U $UID)		# [Openbox] [GNOME/Openbox KDE/Openbox]
+$(pgrep starttde -n -U $UID)		# [Trinity]
 ```
 
 ## Simplified version
