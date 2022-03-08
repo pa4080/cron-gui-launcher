@@ -117,11 +117,11 @@ The script [**`remote_gdm3_setup.sh`**](scripts/remote_gdm3_setup.sh) is develop
 
 The script [`remote_gdm3_setup.sh`](scripts/remote_gdm3_setup.sh) accepts the following options:
 
-* `login` | `log-in` | `vnc` - the current user will be logged-in into a desktop session - appropriate for VNC session.
+* `login`, `log-in`, `vnc` - the current user will be logged-in into a desktop session - appropriate for VNC session.
 
-* `logout` | `log-out` | `rdp` - the current user will be logged-out and the GDM3 settings will be changed in a way appropriate for xRDP session.
+* `logout`, `log-out`, `rdp` - the current user will be logged-out and the GDM3 settings will be changed in a way appropriate for xRDP session.
 
-* `lock` | `lockscreen` | `lock-screen` - the current user will be logged-in into a desktop session and then the screen will be locked - appropriate for VNC session.
+* `lock`, `lockscreen`, `lock-screen` - the current user will be logged-in into a desktop session and then the screen will be locked - appropriate for VNC session.
 
 Here is how it works at Ubuntu 20.04.
 
