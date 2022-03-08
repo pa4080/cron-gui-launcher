@@ -2,7 +2,7 @@
 
 [**cron-gui-launcher.sh**](scripts/cron-gui-launcher.sh) is a Bash script, that is able to launch a **GUI** applications as **Cron** jobs or from a **SSH** session. The script is designed to work with the user's environment, respectively the Cron jobs shall be set within the user's `crontab`. It can be modified to work with `cron.d`, but in some cases this will cause mishmash with the file permissions within `/proc`, so it is not good idea. **Please don't modify and run the script as root. It could be harmful for the system!**
 
-Here is [**a Demo at YouTube**](https://youtube.com/playlist?list=PLO24trCW6Y8evkphLwjzU_AdrznkarVS9).
+Here is a [Demo at YouTube](https://youtube.com/playlist?list=PLO24trCW6Y8evkphLwjzU_AdrznkarVS9).
 
 [![Ubuntu: CRON GUI Launcher Demo - SSH](https://img.youtube.com/vi/xN2iW7Q0vTo/default.jpg)](https://youtu.be/xN2iW7Q0vTo "Click to play Video 1 on Youtube.com")
 [![Ubuntu: CRON GUI Launcher Demo - SSH - XRANDR](https://img.youtube.com/vi/biC4-vQk0qs/default.jpg)](https://youtu.be/biC4-vQk0qs "Click to play Video 3 on Youtube.com")
@@ -12,7 +12,9 @@ Here is [**a Demo at YouTube**](https://youtube.com/playlist?list=PLO24trCW6Y8ev
 ## Input Parameters
 
 - `$1` - list of commands to be executed. The individual commands need to be separated with `␣&&␣` - note the spaces.
+
 - `$2` - short description of the job that will be appended to the log file name. Read the the section *How it works?*
+
 - `$3` - time-out in minutes, when the user is not logged in. While this variable is empty there is no time-out. If the job is on `@reboot` this variable should be empty. This option is useful for regular Cron jobs, for example: If you have a job that is executed every 15 minutes and your user is logout (or locked) for 2 hours there will have 8 pending jobs, which will be executed when the user is logged on.
 
 ## Installation
@@ -98,7 +100,9 @@ This version of the script is called just [**`gui-launcher.sh`**](scripts/gui-la
 In this version the automatic detection of the desktop environment (DE) is removed. So if you use DE  different than Gnome you must adapt the script according to the instructions above. The script uses an improved way for the [desktop environment export](https://askubuntu.com/q/978711/566421) which is not implemented in the original script. And simlified way to [detect does the user is logged-in](https://askubuntu.com/a/1107441/566421). Also it doesn't write a self log file. This version support only a single command as input and doesn't have timeout value.
 
 * For other Desktop Environments change `gnome-session` in this part `$(pgrep gnome-session -n -U $UID)` with the name of the process of the DE in use, for example `mate-session`. A list of the most Ubuntu DE is [presented here](https://github.com/metalevel-tech/cron-gui-launcher#supportedtested-desktop-environments). Lubuntu implementation of the same script - [here](https://askubuntu.com/a/1019449/566421). The script could be used to launch GUI app from TTY or SSH session in the current user's Desktop session.
+
 * The script will work until the user is logged-in, including a locked screen.
+
 * **Please don't modify and run the script as root. It could be harmful for the system!**
 
 Here is how it works at Ubuntu 17.10 with Wayland.
@@ -114,7 +118,9 @@ The script [**`remote_gdm3_setup.sh`**](scripts/remote_gdm3_setup.sh) is develop
 The script [`remote_gdm3_setup.sh`](scripts/remote_gdm3_setup.sh) accepts the following options:
 
 * `login` | `log-in` | `vnc` - the current user will be logged-in into a desktop session - appropriate for VNC session.
+
 * `logout` | `log-out` | `rdp` - the current user will be logged-out and the GDM3 settings will be changed in a way appropriate for xRDP session.
+
 * `lock` | `lockscreen` | `lock-screen` - the current user will be logged-in into a desktop session and then the screen will be locked - appropriate for VNC session.
 
 Here is how it works at Ubuntu 20.04.
@@ -124,13 +130,23 @@ Here is how it works at Ubuntu 20.04.
 ## References: Origins and other applications of the approach
 
 - [How to launch any GUI related application from crontab in Ubuntu 16.04, 17.10 and other Ubuntu distributions with Gnome](https://askubuntu.com/questions/978382/how-can-i-show-notify-send-messages-triggered-by-crontab/978413#978413)
+
 - [Cannot change desktop background with crontab on Lubuntu](https://askubuntu.com/a/1019449/566421)
+
 - [How do I split a “/proc/*/environ” file in separate lines?](https://askubuntu.com/questions/978711/how-do-i-split-a-proc-environ-file-in-separate-lines)
+
 - [How to determine which is the current user's DE through CLI within SSH or Cron?](https://askubuntu.com/questions/956664/how-to-determine-which-is-the-current-users-de-through-cli-within-ssh-or-cron)
+
 - [Cron job to run python script at reboot does not work](https://askubuntu.com/questions/970771/cron-job-to-run-python-script-at-reboot-does-not-work)
+
 - [Adjust brightness with `xrandr` and cron job](https://askubuntu.com/questions/958228/adjust-brightness-with-xrandr-and-cron-job)
+
 - [Crontab and C program that should be executed into a terminal window](https://askubuntu.com/questions/955582/crontab-and-c-program-that-should-be-executed-into-a-terminal-window)
+
 - [Why does this cronjob not work? (Daily-Reddit-Wallpaper)](https://askubuntu.com/questions/911570/why-does-this-cronjob-not-work)
+
 - [How to run script files in a new terminal after connecting to Ubuntu 16.04 server via ssh?](https://askubuntu.com/a/1040852/566421)
+
 - [How to type into the lightdm login screen from the command line?](https://askubuntu.com/a/1020804/566421)
+
 - [Is this behavior of VLC normal?](https://askubuntu.com/a/1107441/566421)
