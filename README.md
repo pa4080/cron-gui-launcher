@@ -1,4 +1,4 @@
-# Cron-GIU-Launcher
+# Launch a GUI Application from Crontab or within an SSH Session
 
 [**cron-gui-launcher.sh**](scripts/cron-gui-launcher.sh) is a Bash script, that is able to launch a **GUI** applications as **Cron** jobs or from a **SSH** session. The script is designed to work with the user's environment, respectively the Cron jobs shall be set within the user's `crontab`. It can be modified to work with `cron.d`, but in some cases this will cause mishmash with the file permissions within `/proc`, so it is not good idea. **Please don't modify and run the script as root. It could be harmful for the system!**
 
